@@ -1,0 +1,103 @@
+mhyles [1 hour ago] 
+```userGuess = input('Please guess a letter: ').lower()
+    if len(userGuess) != 1:
+        return -1
+    if userGuess == '*':
+        return userGuess
+    if not str.isalpha(userGuess):
+        return -1
+    return userGuess
+```
+
+mhyles [1 hour ago]
+For this piece of code, you could've used a while loop to ensure that they are forced to use a letter
+
+mhyles [1 hour ago]
+``` if warnings > 1 or warnings == 0:
+        print('You have {} warnings left: '.format(warnings), end='')```
+
+mhyles [1 hour ago]
+you can remove this by,
+```print('You have {} warning(s) left'
+```
+(edited)
+
+mhyles [1 hour ago]
+```def matchLetter(l1, l2):```
+
+mhyles [1 hour ago]
+This is quite hard to read, it looks like 11. Maybe change it to letter_1, or letter1 to make it more clear.
+
+mhyles [1 hour ago]
+I find it kind of weird the way you're doing the else statements,
+```if len(possible_matches) > 0:
+        print('Possible word matches are:')
+        for match in possible_matches:
+            print(match, end=" ")
+        print()
+
+    else: print('No matches found')
+```
+
+mhyles [1 hour ago]
+Might just make more sense to do,
+```else:
+   print(.....
+```
+
+mhyles [1 hour ago]
+Other than that it looks good, I'll post my code so you can compare and see how I did it :slightly_smiling_face:
+
+mhyles [1 hour ago]
+```def isWordGuessed(secretWord, lettersGuessed):
+    x = sum([secretWord.count(letter) for letter in set(lettersGuessed)])
+    return True if len(secretWord) == x else False
+
+def getGuessedWord(secretWord, lettersGuessed):
+    return ''.join([letter if letter in lettersGuessed else '_' for letter in secretWord])
+
+def getAvailableLetters(lettersGuessed):
+    return ''.join([letter for letter in string.ascii_lowercase if letter not in lettersGuessed])
+
+def hangman(secretWord):
+
+    guesses_left = 8
+    letters_guessed = []
+
+    print("Welcome to the game Hangman!")
+    print("I am thinking of a word that is {} letters long.".format(len(secretWord)))
+    print("------------")
+
+    while guesses_left > 0:
+        print("You have {} guesses left".format(guesses_left))
+        print("Available letters: {}".format(getAvailableLetters(letters_guessed)))
+        guess = input("Please guess a letter: ").lower()
+
+        if guess in letters_guessed:
+            print("Oops! You've already guessed that letter: {}".format(getGuessedWord(secretWord, letters_guessed)))
+            print("------------")
+            continue
+
+        elif guess in secretWord:
+            letters_guessed.append(guess)
+            print("Good guess: {}".format(getGuessedWord(secretWord, letters_guessed)))
+            guesses_left += 1
+
+        else:
+            letters_guessed.append(guess)
+            print("Oops! That letter is not in my word: {}".format(getGuessedWord(secretWord, letters_guessed)))
+
+        if isWordGuessed(secretWord, letters_guessed):
+            print("------------")
+            print("Congratulations, you won!")
+            break
+
+        print("------------")
+        guesses_left -= 1
+
+    if guesses_left == 0:
+        print("Sorry, you ran out of guesses. The word was {}".format(secretWord))
+```
+
+mhyles [1 hour ago]
+Still some errors in that, which can be cleaned up. Did it very rushed, but it works and it passes so i'm happy.
