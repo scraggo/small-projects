@@ -11,6 +11,8 @@ In addition to being a valuable skill for any front-end developer, transitioning
 
 If you are new to HTML and CSS, we recommend you take [this course first](https://www.codecademy.com/learn/web).
 
+---
+
 Compiling
 
 In the terminal, compile the SCSS to CSS by typing the following command and hitting Enter on your keyboard:
