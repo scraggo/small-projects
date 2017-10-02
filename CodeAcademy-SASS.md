@@ -3,6 +3,14 @@
 
 ## I. YOUR FIRST SASS STYLESHEET
 
+Why Sass?
+
+Sass, or Syntactically Awesome StyleSheets, is an extension language for CSS. With Sass, you can write clean, sustainable CSS code and solve the common repetition and maintenance challenges present in traditional CSS.
+
+In addition to being a valuable skill for any front-end developer, transitioning from CSS to Sass is pretty smooth due to the familiar syntax. For this reason, we will be learning the SCSS (Sassy CSS) syntax.
+
+If you are new to HTML and CSS, we recommend you take [this course first](https://www.codecademy.com/learn/web).
+
 Compiling
 
 In the terminal, compile the SCSS to CSS by typing the following command and hitting Enter on your keyboard:
@@ -749,5 +757,125 @@ would translate to
   //more rules
 }
 ```
-Placeholders are a nice way to consolidate rules that never actually get used on their own in the HTML.
+**Placeholders are a nice way to consolidate rules that never actually get used on their own in the HTML.**
 
+EXAMPLE
+
+Notice how we never actually use .absolute anywhere in the HTML? Remove it from main.scss and place it inside helper/_placeholders.scss:
+```scss
+%absolute{
+   position: absolute;
+}
+```
+Now replace your old extend line with the placeholder extend notation:
+
+`@extend %absolute;`
+
+FROM SASS DOCS
+
+Placeholder selectors look like class and id selectors, except the # or . is replaced by %. They can be used anywhere a class or id could, and on their own they prevent rulesets from being rendered to CSS. For example:
+```scss
+// This ruleset won't be rendered on its own.
+#context a%extreme {
+  color: blue;
+  font-weight: bold;
+  font-size: 2em;
+}
+```
+However, placeholder selectors can be extended, just like classes and ids. The extended selectors will be generated, but the base placeholder selector will not. For example:
+```scss
+.notice {
+  @extend %extreme;
+}
+```
+Is compiled to:
+```scss
+#context a.notice {
+  color: blue;
+  font-weight: bold;
+  font-size: 2em; }
+```
+
+---
+
+@Extend vs @Mixin
+
+Sweet! Recall that mixins, unlike extended selectors, insert the code inside the selector's rules wherever they are included, only including "original" code if they are assigning a new value to the rule's properties via an argument.
+
+Let's look at the @mixin and @extend constructs closely and compare output:
+```scss
+@mixin no-variable {
+  font-size: 12px;
+  color: #FFF;
+  opacity: .9;
+}
+
+%placeholder {
+  font-size: 12px;
+  color: #FFF;
+  opacity: .9;
+}
+
+span {
+  @extend %placeholder;
+}
+
+div {
+  @extend %placeholder;
+}
+
+p {
+  @include no-variable;
+}
+
+h1 {
+  @include no-variable;
+}
+```
+would compile to:
+```scss
+span, div{
+  font-size: 12px;
+  color: #FFF;
+  opacity: .9;
+}
+
+p {
+  font-size: 12px;
+  color: #FFF;
+  opacity: .9;
+  //rules specific to ps
+}
+
+h1 {
+  font-size: 12px;
+  color: #FFF;
+  opacity: .9;
+  //rules specific to ps
+}
+```
+We can clearly see extending results in way cleaner and more efficient output with as little repetition as possible.
+
+As a general rule of thumb, you should
+- Try to only create mixins that take in an argument, otherwise you should extend.
+- Always look at your CSS output to make sure your extend is behaving as you intended.
+
+Instructions
+
+Remove the center mixin in the helper/_mixins.scss partial that does not take in a variable. Convert the placeholder named %center inside the helper/_placeholders.scss partial.
+
+Be sure to change the include statements to extend inside both span and h1:
+```scss
+@extend %center;
+```
+Click "Run" to see your changes in the browser and inspect them in the output of main.css.
+
+---
+
+Generalizations
+- Sustainability is key in Sass, planning out the structure of your files and sticking to naming conventions for both variables, mixins, and selectors can reduce complexity.
+- Understanding CSS output is also essential to writing sustainable SCSS. In order to make the best choices about what functions and directives to use, it is important to first understand how this will translate in CSS.
+- Mixins should only be used if they take in an argument, otherwise, you should extend the selector's rules, whether it be a class, id, or placeholder.
+
+In addition to the directives you have learned in this course, be sure to check out the many additional available Sass functions and directives.
+- [File: SASS_REFERENCE — Sass Documentation](http://sass-lang.com/documentation/file.SASS_REFERENCE.html)
