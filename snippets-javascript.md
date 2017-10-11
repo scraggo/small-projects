@@ -4,7 +4,8 @@
 
 for loop
 ```js
-for (let i = 0; i < arr.length; i++) {
+let i;
+for (i = 0; i < arr.length; i++) {
     arr[i] = 'hi';
 }
 ```
