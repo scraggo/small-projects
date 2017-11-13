@@ -9,27 +9,24 @@ const addItemButton = document.querySelector('button.addItemButton');
 
 function onLoad(){
   attachListItemButtons();
-  // attachListItemButtons();
 }
 
 onLoad();
 
-// function getListElements() {
-//   return listUl;
-// }
-
-function attachListItemButtons() { //using js to create HTML buttons
-  // let buttons = f_listUl.getElementsByTagName('button');
-  // console.log(f_listUl.children);
+function attachListItemButtons() { 
+  //using js to remove and create HTML buttons on certain event listeners
+  // called at page load and during user interactions that change state of buttons.
   let liArray = listUl.children;
+  let li, up, down, remove;
   let i = 0;
   let lastIndex = liArray.length - 1;
-  let li, up, down, remove;
   for (i; i < liArray.length; i++) {
     li = liArray[i];
+    // button elements (null if not found)
     up = li.querySelector('button.up');
     down = li.querySelector('button.down');
     remove = li.querySelector('button.remove');
+    // conditionally removes buttons if found
     removeButton(li, up);
     removeButton(li, down);
     removeButton(li, remove);
@@ -41,7 +38,6 @@ function attachListItemButtons() { //using js to create HTML buttons
       li.appendChild(createDownButton());
     }
     li.appendChild(createRemoveButton());
-    // console.log(li);
   }
 }
 
@@ -73,6 +69,7 @@ function createRemoveButton() {
 }
 
 listUl.addEventListener('click', (event) => {
+  // allows user to remove or move a list item by clicking one of 3 buttons
   if (event.target.tagName == 'BUTTON') {
     if (event.target.className == 'remove') {
       let li = event.target.parentNode; //DOM traversal
@@ -112,12 +109,14 @@ toggleList.addEventListener('click', () => {
 });
 
 descriptionButton.addEventListener('click', () => {
+  // allows user to rename the list
   descriptionP.innerHTML = descriptionInput.value + ':';
   descriptionInput.value = '';
 });
 
 
 addItemButton.addEventListener('click', () => {
+  // allows user to append a new item to end of list
   if (addItemInput.value.length > 0) {
     let ul = document.getElementsByTagName('ul')[0];  // used only to add a new element
     let li = document.createElement('li');  // only create the element if it will be added
@@ -128,4 +127,3 @@ addItemButton.addEventListener('click', () => {
     addItemInput.value = '';  // this is not needed if the value is already empty
   }
 });
-
