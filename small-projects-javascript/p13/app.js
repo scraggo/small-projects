@@ -7,43 +7,55 @@ const listUl = listDiv.querySelector('ul') // this is a way to access child
 const addItemInput = document.querySelector('input.addItemInput');
 const addItemButton = document.querySelector('button.addItemButton');
 
-function updateDom() {
-  // these need to be updated with app states.
-  const lis = Array.from(listUl.children); //gets a list of all child elements
-  const firstListItem = listUl.firstElementChild;
-  const lastListItem = listUl.lastElementChild;
-  lis.forEach(i => attachListItemButtons(i)); //they used a for loop without Array.from.
-  return [lis, firstListItem, lastListItem];
+function onLoad(){
+  attachListItemButtons(getListElements());
+  // attachListItemButtons();
 }
 
-let updates = updateDom();
-console.log(updates);
+onLoad();
 
-firstListItem.style.backgroundColor = 'blue';
-lastListItem.style.backgroundColor = 'red';
-
-function attachListItemButtons(li) { //using js to create HTML buttons
-  if (li != firstListItem) {
-    let up = document.createElement('button');
-    up.className = 'up';
-    up.textContent = 'Up';
-    li.appendChild(up);
-  }
-
-  if (li != lastListItem) {
-    let down = document.createElement('button');
-    down.className = 'down';
-    down.textContent = 'Down';
-    li.appendChild(down);
-  }
-
-  let remove = document.createElement('button');
-  remove.className = 'remove';
-  remove.textContent = 'Remove';
-  li.appendChild(remove);
+function getListElements() {
+  return listUl;
 }
 
-
+function attachListItemButtons(f_listUl) { //using js to create HTML buttons
+  // let buttons = f_listUl.getElementsByTagName('button');
+  console.log(f_listUl.children);
+  for (let i = f_listUl.children.length - 1; i >=0; i--) {
+    // console.log(f_listUl.children[i]);
+    f_listUl.removeChild(f_listUl.children[i]);
+  }
+  return;
+  let lastIndex = f_listUl.length - 1;
+  let li, liChildren, upButton, downButton;
+  let i = 0;
+  for (i; i < f_listUl.length; i++) {
+    li = f_listUl[i];
+    if (i === 0) {
+      // li.removeChild(upButton);
+      // alert('removed!');
+      // console.log(li.children);
+    }
+    if (i !== 0) {
+      let up = document.createElement('button');
+      up.className = 'up';
+      up.textContent = 'Up';
+      li.appendChild(up);
+    }
+    if (i !== lastIndex) {
+      let down = document.createElement('button');
+      down.className = 'down';
+      down.textContent = 'Down';
+      li.appendChild(down);
+    }
+  
+    let remove = document.createElement('button');
+    remove.className = 'remove';
+    remove.textContent = 'Remove';
+    li.appendChild(remove);
+    // console.log(li);
+  }
+}
 
 listUl.addEventListener('click', (event) => {
   if (event.target.tagName == 'BUTTON') {
@@ -69,6 +81,7 @@ listUl.addEventListener('click', (event) => {
       }
     }
   }
+  // attachListItemButtons(getListElements());
 });
 
 
@@ -95,7 +108,7 @@ addItemButton.addEventListener('click', () => {
     let li = document.createElement('li');  // only create the element if it will be added
     li.textContent = addItemInput.value;
     ul.appendChild(li);
-    attachListItemButtons(li);
+    // attachListItemButtons(li);
     // this clears the input after the new element is appended
     addItemInput.value = '';  // this is not needed if the value is already empty
   }
