@@ -23,9 +23,9 @@ function attachListItemButtons(f_listUl) { //using js to create HTML buttons
   console.log(f_listUl.children);
   for (let i = f_listUl.children.length - 1; i >=0; i--) {
     // console.log(f_listUl.children[i]);
-    f_listUl.removeChild(f_listUl.children[i]);
+    // f_listUl.removeChild(f_listUl.children[i]);
   }
-  return;
+  // return;
   let lastIndex = f_listUl.length - 1;
   let li, liChildren, upButton, downButton;
   let i = 0;

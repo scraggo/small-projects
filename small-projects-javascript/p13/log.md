@@ -11,7 +11,6 @@ function attachListItemButtons(f_listUl) { //using js to create HTML buttons
     }
 ```
 The goal is to remove ALL buttons at the beginning of the function.
-
-// if li.hasChildren(), remove all children.
-
-make into separate function?
+- // if li.hasChildren(), remove all children.
+- make into separate function?
+- how do you get/delete a specific child? I want to delete the "up" button from the first element and the "down" button from the last element.
