@@ -85,3 +85,63 @@ function averageMotherAge(data) {
 }
 
 console.log('2. Mother Child Age Difference', averageMotherAge(ancestry));
+
+// Historical Life Expectancy
+function historicalLifeExpectancy(data) {
+  // arrays: {16: [1,2,3,4,5], 17: [1,2,3,4,5]}
+  let lifeExpectancy = {};
+  data.forEach( x => {
+    let age = x.died - x.born;
+    let century = Math.ceil(x.died / 100);
+    if (lifeExpectancy[century] === undefined) {
+      lifeExpectancy[century] = [age];
+    } else {
+      lifeExpectancy[century].push(age);
+    }
+  });
+
+  let sortedLife = Object.keys(lifeExpectancy).sort();
+  sortedLife.forEach( x => {
+    console.log(
+      x + ': ' + average(lifeExpectancy[x]).toFixed(1)
+    );
+  })
+}
+
+console.log('3. Historical Life Expectancy');
+historicalLifeExpectancy(ancestry);
+
+// write your own every and some
+function every(arr, test) {
+  let result = true;
+  let i = 0;
+  for (i; i < arr.length; i++) {
+      if (!test(arr[i])) {
+        result = false;
+      }
+  }
+  return result;
+}
+
+function some(arr, test) {
+  let result = false;
+  let i = 0;
+  for (i; i < arr.length; i++) {
+    if (test(arr[i])) {
+      result = true;
+    }
+  }
+  return result;
+}
+
+// Your code here.
+console.log('4. write your own every and some');
+
+console.log(every([NaN, NaN, NaN], isNaN));
+// → true
+console.log(every([NaN, NaN, 4], isNaN));
+// → false
+console.log(some([NaN, 3, 4], isNaN));
+// → true
+console.log(some([2, 3, 4], isNaN));
+// → false
