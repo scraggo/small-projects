@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="description" content="ToDo List v8 watchandcode.com">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+  ToDo List v8 watchandcode.com  
+  </title>
+</head>
+<body>
+
+  <h1>Todo List</h1>
+  
+  <div>
+    <button onclick="handlers.displayTodos()">Display Todos</button>
+    <button onclick="handlers.toggleAll()">Toggle All</button>
+  </div>
+
+  <div>
+    <button onclick="handlers.addTodo()">Add</button>
+    <input id="addTodoTextInput" type="text">
+  </div>
+
+  <div>
+    <button onclick="handlers.changeTodo()">Change Todo</button>
+    <input id="changeTodoPositionInput" type="number">
+    <input id="changeTodoTextInput" type="text">
+  </div>
+
+  <div>
+    <button onclick="handlers.deleteTodo()">Delete</button>
+    <input id="deleteTodoPositionInput" type="number">
+  </div>
+
+<div>
+  <button onclick="handlers.toggleCompleted()">Toggle Completed</button>
+  <input id="toggleCompletedPositionInput" type="number">
+</div>
+
+<pre>
+  v8: refactoring
+  html inline button handlers: frowned upon, but can be useful in this case.
+  controls: .addTodo, .changeTodo, .deleteTodo, .toggleCompleted
+  woah: instead of .value, use .valueAsNumber to ensure Number.
+</pre>
+
+<script src="./app.js"></script>
+</body>
+</html>

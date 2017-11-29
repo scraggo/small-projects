@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="description" content="ToDo List v8 watchandcode.com">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+  ToDo List v9 watchandcode.com  
+  </title>
+</head>
+<body>
+
+  <h1>Todo List</h1>
+  
+  <div>
+    <button onclick="handlers.displayTodos()">Display Todos</button>
+    <button onclick="handlers.toggleAll()">Toggle All</button>
+  </div>
+
+  <div>
+    <button onclick="handlers.addTodo()">Add</button>
+    <input id="addTodoTextInput" type="text">
+  </div>
+
+  <div>
+    <button onclick="handlers.changeTodo()">Change Todo</button>
+    <input id="changeTodoPositionInput" type="number">
+    <input id="changeTodoTextInput" type="text">
+  </div>
+
+  <div>
+    <button onclick="handlers.deleteTodo()">Delete</button>
+    <input id="deleteTodoPositionInput" type="number">
+  </div>
+
+<div>
+  <button onclick="handlers.toggleCompleted()">Toggle Completed</button>
+  <input id="toggleCompletedPositionInput" type="number">
+</div>
+
+  <ul></ul>
+
+  <pre>
+    Requirements:
+    li element for every todo
+    li should contain .todoTxt
+    li should show .completed
+
+    1. document.createElement li 2. document.querySelector ul 3. todosUl.appendChild(todoLi)
+
+    process: before putting data in the li element, just have the correct number of li's come up.
+  </pre>
+
+  <script src="./app.js"></script>
+</body>
+</html>
