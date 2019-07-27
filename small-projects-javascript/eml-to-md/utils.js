@@ -7,11 +7,8 @@ const errCallback = (err) => {
 
 const removeSourceParam = (link) => link.split('?source')[0];
 
-const filterLine = (line, linksOnly = false) => {
-  if (line === '') {
-    return false;
-  }
-  if (linksOnly && !line.includes('(http')) {
+const filterLine = (line, linksOnly) => {
+  if (line === '' || (linksOnly && !line.includes('(http'))) {
     return false;
   }
   return true;
@@ -20,16 +17,17 @@ const filterLine = (line, linksOnly = false) => {
 /**
  *
  * @param {string} text
+ * @param {boolean} [linksOnly]
  * @returns {array}
  */
-const getParsedText = (text, linksOnly = false) =>
+const getParsedText = (text, linksOnly) =>
   text
     .split('\r\n')
     .filter((line) => filterLine(line, linksOnly))
     .map((line) => {
       const rawLink = line.split('(http')[1];
-      if (!linksOnly && !rawLink) {
-        return '\n' + line + '\n';
+      if (!rawLink) {
+        return linksOnly ? '' : `\n${line}\n`;
       }
       const link = `http${removeSourceParam(rawLink.replace(')', ''))}`;
       return `* <${link}>`;
@@ -38,19 +36,15 @@ const getParsedText = (text, linksOnly = false) =>
 /**
  *
  * @param {object} data
+ * @param {boolean} [linksOnly=false]
  * @returns {string}
  */
-const parseEmlData = (data) => {
-  const { date = '', from, subject = '', text } = data;
-  if (!from) {
-    return '';
-  }
+const parseEmlData = (data, linksOnly = false) => {
+  const { date = '', from = {}, subject = '', text } = data;
   const { name = '', email = '' } = from;
-  return `${date}\n${name} - ${email}\n${subject}
+  return `## ${subject}\n\n${name} - ${email}\n${date}
 
-${getParsedText(text)
-  .join('\n')
-  .slice(0, 1000)}`;
+${getParsedText(text, linksOnly).join('\n')}\n\n\n`;
 };
 
 module.exports = {

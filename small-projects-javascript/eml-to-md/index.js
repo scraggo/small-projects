@@ -19,10 +19,7 @@ const { errCallback, parseEmlData, rejectWithErr } = require('./utils');
  */
 const getProcessedEmlAsText = (text, linksOnly) =>
   emlReadAsync(text)
-    .then((data) => {
-      console.log(parseEmlData(data, linksOnly));
-      return parseEmlData(data, linksOnly);
-    })
+    .then((data) => parseEmlData(data, linksOnly))
     .catch(rejectWithErr);
 
 /**
@@ -80,14 +77,14 @@ const writeResultsToFile = (resultArr, { dir, outputFilename }) => {
     .catch(rejectWithErr);
 };
 
-const main = () => {
-  const args = process.argv;
-
+const getArgsMap = (args) => {
   if (args.length < 3) {
-    console.log('Usage: <directory> {OPTIONS}');
     console.log(
-      'OPT:  --linksOnly - Pass in to get the email as a list of links only.',
-      'OPT:  --output=<output filename> - output filename'
+      `eml-to-md Usage: <directory> {OPTIONS}
+
+OPT: --linksOnly - get list of links in email only.
+OPT: --output=<output filename> - output filename (spaces disallowed)
+`
     );
     process.exit();
   }
@@ -99,11 +96,16 @@ const main = () => {
       .filter((arg) => arg.startsWith('--output'))
       .map((str) => str.split('=')[1])[0] || '_result.md';
 
-  const argMap = {
+  return {
     dir,
     linksOnly,
     outputFilename
   };
+};
+
+const main = () => {
+  const argMap = getArgsMap(process.argv);
+
   getAllFileNamesInDir(argMap)
     .then((files) => getProcessedFiles(files, argMap))
     .then((arrOfResults) => writeResultsToFile(arrOfResults, argMap))
