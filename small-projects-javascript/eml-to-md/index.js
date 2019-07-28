@@ -72,20 +72,32 @@ const writeResultsToFile = (resultArr, { dir, outputFilename }) => {
   const newFile = resultArr.join('\n\n');
   return writeFileAsync(newFilename, newFile)
     .then(() => {
-      console.log('The file was saved!', newFilename);
+      console.log('All done! The file was saved to', newFilename);
     })
     .catch(rejectWithErr);
 };
 
-const getArgsMap = (args) => {
-  if (args.length < 3) {
-    console.log(
-      `eml-to-md Usage: <directory> {OPTIONS}
+/**
+ * @typedef {Object} ArgsMap
+ * @property {string} dir
+ * @property {boolean} linksOnly
+ * @property {string} outputFilename
+ */
 
-OPT: --linksOnly - get list of links in email only.
-OPT: --output=<output filename> - output filename (spaces disallowed)
-`
-    );
+/**
+ * Handles arguments, returns parsed args if help wasn't displayed.
+ * @param {string[]} args process.argv
+ * @returns {ArgsMap} {@link ArgsMap}
+ */
+const getArgsMap = (args) => {
+  const helpMessage = `eml-to-md Usage: <directory> {OPTIONS}
+
+OPT: --linksOnly ................. get list of links in email only.
+OPT: --output=<output filename> .. output filename (spaces disallowed)
+OPT: --help ...................... see this help message
+`;
+  if (args.length < 3 || args.includes('--help')) {
+    console.log(helpMessage);
     process.exit();
   }
 
@@ -109,9 +121,6 @@ const main = () => {
   getAllFileNamesInDir(argMap)
     .then((files) => getProcessedFiles(files, argMap))
     .then((arrOfResults) => writeResultsToFile(arrOfResults, argMap))
-    .then(() => {
-      console.log('All done!');
-    })
     .catch(errCallback);
 };
 

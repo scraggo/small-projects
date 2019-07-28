@@ -17,6 +17,7 @@ Options:
 ```txt
 OPT: --linksOnly - get list of links in email only.
 OPT: --output=<output filename> - output filename (spaces disallowed)
+OPT: --help - see this help message
 ```
 
 ## Dependencies
