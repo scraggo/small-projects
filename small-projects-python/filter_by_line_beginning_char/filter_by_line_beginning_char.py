@@ -1,34 +1,10 @@
 import sys
 
-# Example input
-test_str = '''@test
-testing
-* [test?](https://example.com)
 
-@hi
-hello
-hey there
-
-@hi
-other stuff
-
-@z
-
-@b
-'''
-
-# Expected output:
-'''
-@b
-@hi
-@test
-@z
-'''
-
-
-def handle_args():
-    if len(sys.argv) < 2:
-        sys.exit('Expected a filepath. Ex: python <script name> <file path>')
+def validate_args_and_display_help():
+    if len(sys.argv) < 3:
+        sys.exit(
+            'Expected a character and filepath. Ex: python <script name> <character - in quotes. ex: "#"> <file path>')
 
 
 def get_line_list(line_set):
@@ -53,17 +29,17 @@ def print_lines(header, line_list):
 
 
 def main():
-    handle_args()
+    validate_args_and_display_help()
 
-    in_file = sys.argv[1]
-    # lines = test_str.split('\n')
+    LINE_BEGIN_CHAR = sys.argv[1]
+    in_file = sys.argv[2]
 
     line_set = set()
 
     with open(in_file, 'r') as lines:
         print('\nUnsorted:\n')
         for line in lines:
-            if line.strip().startswith('@'):
+            if line.strip().startswith(LINE_BEGIN_CHAR):
                 line_set.add(line)
                 print(line, end="")
         print('\n')
