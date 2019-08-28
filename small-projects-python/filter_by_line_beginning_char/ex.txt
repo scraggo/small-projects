@@ -1,0 +1,25 @@
+
+# Example input
+test_str = '''@test
+testing
+* [test?](https://example.com)
+
+@hi
+hello
+hey there
+
+@hi
+other stuff
+
+@z
+
+@b
+'''
+
+# Expected output:
+'''
+@b
+@hi
+@test
+@z
+'''
