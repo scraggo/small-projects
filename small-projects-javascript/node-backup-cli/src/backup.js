@@ -18,7 +18,6 @@ const backup = commander => {
     .then(() => readFileAsync(path, { encoding: "utf8" }))
     .then(async json => {
       const parsedConfig = JSON.parse(json);
-
       const { files, backupDirectory } = parsedConfig;
 
       const normalizedBackupDir = resolvePath(backupDirectory);
@@ -29,10 +28,12 @@ const backup = commander => {
 
       await Promise.all(promises);
 
+      /* eslint-disable no-console */
       console.log("Backups successful!");
       console.log(parsedConfig);
     })
     .catch(console.error);
+  /* eslint-enable */
 };
 
 export default backup;
