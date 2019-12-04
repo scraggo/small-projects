@@ -4,17 +4,10 @@
   "description": "copy files listed in a config to a backup directory",
   "main": "src/index.js",
   "author": "scraggo@gmail.com",
-  "scripts": {
-    "build": "npm run clean && babel src --out-dir build",
-    "clean": "rm -rf build",
-    "inspect": "npm run start-watch -- --inspect",
-    "lint": "eslint . --ext .js",
-    "start": "node build/index.js",
-    "start-dev": "babel-node src/index.js",
-    "start-watch": "nodemon --exec babel-node src/index.js"
-  },
   "dependencies": {
-    "commander": "^4.0.0"
+    "cheerio": "^1.0.0-rc.3",
+    "commander": "^4.0.0",
+    "papaparse": "^5.1.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
@@ -32,6 +25,15 @@
     "nodemon": "^1.19.0",
     "prettier": "^1.17.1",
     "prettier-eslint": "^8.8.2"
+  },
+  "scripts": {
+    "build": "npm run clean && babel src --out-dir build",
+    "clean": "rm -rf build",
+    "inspect": "npm run start-watch -- --inspect",
+    "lint": "eslint . --ext .js",
+    "start": "node build/index.js",
+    "start-dev": "babel-node src/index.js",
+    "start-watch": "nodemon --exec babel-node src/index.js"
   },
   "husky": {
     "hooks": {
