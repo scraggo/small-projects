@@ -5,6 +5,11 @@
 // get all a tags? what about the titles of folders they're in?
 // recursive call, I think
 // if python, use beatiful shoup
+const paths = {
+  chrome: '/Users/davecohen/Dropbox/Notes/Programming-DB/_BookmarkProject/json_to_spreadsheet/Chrome-191201b.html',
+  firefox: '/Users/davecohen/Dropbox/Notes/Programming-DB/_BookmarkProject/json_to_spreadsheet/firefox-bookmarks-191204.html'
+};
+
 const unixEpochToString = date => new Date(date * 1000).toISOString().slice(0, 10);
 
 document.querySelectorAll('a').forEach(node => {

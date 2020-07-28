@@ -14,13 +14,6 @@ var _fs = require("./utils/fs");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import { prettyPrint } from './utils/logging';
-// paths will eventually be cli argument
-const paths = {
-  chrome: '/Users/davecohen/Dropbox/Notes/Programming-DB/_BookmarkProject/json_to_spreadsheet/Chrome-191201b.html',
-  firefox: '/Users/davecohen/Dropbox/Notes/Programming-DB/_BookmarkProject/json_to_spreadsheet/firefox-bookmarks-191204.html'
-};
-
 const getTagInfo = tag => {
   const {
     attribs = {},
@@ -138,15 +131,16 @@ const main = async () => {
   const {
     input,
     output
-  } = _commander.default;
-  console.log(input, output); // debugger;
+  } = _commander.default; // console.log(input, output);
+  // debugger;
   // const infile = paths.firefox;
 
   const outfile = output || `${(0, _fs.getFilenameWithoutExtension)(input)}.csv`;
+  console.log(outfile);
   const $ = await (0, _cheerio.getCheerioFile)(input); // const allChildren = getAllChildrenFromRootDl($);
 
   const linkTags = getAllLinkTags($);
-  const csv = (0, _csv.getCSV)(linkTags); // output file to disk!
+  const csv = (0, _csv.getCSV)(linkTags); // output file to disk
 
   await (0, _fs.writeFileAsync)(outfile, csv);
 };
