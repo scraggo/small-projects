@@ -4,6 +4,10 @@ import path from 'path';
 
 const { promises } = fs;
 
+/**
+ * @typedef {string} ExpandedPath
+ */
+
 export const readFileAsync = promises.readFile;
 
 /**
@@ -16,7 +20,7 @@ export const existsAsync = promises.access;
 /**
  * If path begins with '~', turn into an absolute path
  * @param {string} filepath path of file or directory
- * @returns {string} expanded path
+ * @returns {ExpandedPath} expanded path
  */
 const expandHome = filepath => {
   if (filepath[0] === '~') {
@@ -27,7 +31,7 @@ const expandHome = filepath => {
 
 /**
  * @param {string} filePath path of file or directory
- * @returns {string} see return of `expandHome`
+ * @returns {ExpandedPath} expanded path
  */
 export const resolvePath = filePath => path.resolve(expandHome(filePath));
 

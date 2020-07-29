@@ -10,7 +10,7 @@
     "inspect": "npm run start-watch -- --inspect",
     "lint": "eslint . --ext .js",
     "start": "node build/index.js",
-    "start-dev": "babel-node src/index.js",
+    "start-dev": "babel-node src/index.js -c \"/Users/davecohen/programming/_Github/small-projects/small-projects-javascript/question-prompter/src/example/example.json\"",
     "start-watch": "nodemon --exec babel-node src/index.js"
   },
   "dependencies": {

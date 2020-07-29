@@ -57,13 +57,9 @@ const prompt1 = [
   }
 ];
 
-export default commander => {
-  const { config: path } = commander;
-  console.log(path || 'no path entered');
-  // get user data...
-  const userData = exampleData;
-  inquirer.prompt(prompt1).then(answers => {
+export default config => {
+  return inquirer.prompt(prompt1).then(answers => {
     const choice = answers.topLevel;
-    return secondLevel[choice].cb(userData);
+    return secondLevel[choice].cb(config);
   });
 };
