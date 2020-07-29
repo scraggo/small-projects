@@ -1,0 +1,10 @@
+# gitignore
+
+# package directories
+node_modules
+
+/*.log
+.env*
+.webpack
+
+example/
