@@ -26,6 +26,9 @@ const secondLevel = {
         })
         .then(answersToQs => {
           console.log(answersToQs);
+          console.log(
+            `saving your answers to ${selectors.getOutputPath(userData)}`
+          );
         })
   },
   lookAtNotes: {
