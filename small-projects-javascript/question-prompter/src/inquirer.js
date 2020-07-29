@@ -1,8 +1,9 @@
 import inquirer from 'inquirer';
 import { openWithVSCode } from './utils/exec';
+import * as selectors from './data/selectors';
 
 const findFromData = (choice, userData) =>
-  userData.find(data => data.name === choice);
+  selectors.getContent(userData).find(data => data.name === choice);
 
 const secondLevel = {
   answerQuestions: {
@@ -15,7 +16,7 @@ const secondLevel = {
             type: 'list',
             name: 'whichQuestions',
             message: 'Which questions do you want to answer?',
-            choices: userData.filter(entry => Boolean(entry.questions))
+            choices: selectors.getQuestionsList(userData)
           }
         ])
         .then(prompt => {
@@ -37,7 +38,7 @@ const secondLevel = {
             type: 'list',
             name: 'whichNote',
             message: 'What note do you want to read?',
-            choices: userData.filter(entry => Boolean(entry.path))
+            choices: selectors.getEntriesWithPath(userData)
           }
         ])
         .then(prompt => {
@@ -59,9 +60,8 @@ const prompt1 = [
 ];
 
 export default config => {
-  const { content } = config; // todo: later, we can add "openWith"
   return inquirer.prompt(prompt1).then(answers => {
     const choice = answers.topLevel;
-    return secondLevel[choice].cb(content);
+    return secondLevel[choice].cb(config);
   });
 };

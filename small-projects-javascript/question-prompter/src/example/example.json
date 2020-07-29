@@ -1,4 +1,7 @@
 {
+  "config": {
+    "output": "~/Dropbox/Notes/_Inbox-Notes-DB"
+  },
   "content": [
     {
       "name": "experience1",
