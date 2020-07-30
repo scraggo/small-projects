@@ -5,10 +5,11 @@ import path from 'path';
 const { promises } = fs;
 
 /**
- * @typedef {string} ExpandedPath
+ * @typedef {string} ExpandedPath can include '~'
  */
 
 export const readFileAsync = promises.readFile;
+export const writeFileAsync = promises.writeFile;
 
 /**
  * Checks if a file or directory exists
@@ -48,7 +49,8 @@ export const getFileName = filepath => path.basename(filepath);
  */
 export const getBackupFileLocation = (backupDirAbsolute, filepath) => {
   const fileName = getFileName(filepath);
-  return path.join(backupDirAbsolute, fileName);
+  const resolvedDir = resolvePath(backupDirAbsolute);
+  return path.join(resolvedDir, fileName);
 };
 
 /**
