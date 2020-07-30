@@ -1,9 +1,21 @@
 import inquirer from 'inquirer';
 import { openWithVSCode } from './utils/exec';
+import { writeQAToOutputDir } from './io-handlers';
 import * as selectors from './data/selectors';
 
 const findFromData = (choice, userData) =>
   selectors.getContent(userData).find(data => data.name === choice);
+
+const formatQAOutput = (choice, answersToQs) => {
+  return JSON.stringify(
+    {
+      name: choice,
+      entries: answersToQs
+    },
+    null,
+    2
+  );
+};
 
 const secondLevel = {
   answerQuestions: {
@@ -19,15 +31,21 @@ const secondLevel = {
             choices: selectors.getQuestionsList(userData)
           }
         ])
-        .then(prompt => {
+        .then(async prompt => {
           const choice = prompt.whichQuestions;
           const questionsToAnswer = findFromData(choice, userData).questions;
-          return inquirer.prompt(questionsToAnswer);
-        })
-        .then(answersToQs => {
-          console.log(answersToQs);
+          const answersToQs = await inquirer.prompt(questionsToAnswer);
+          // todo: human readable Date 20200729_uniqueId
+          const fileName = `${Date.now()}_${choice}_answers.json`;
           console.log(
-            `saving your answers to ${selectors.getOutputPath(userData)}`
+            `saving your answers to ${selectors.getOutputPath(
+              userData
+            )}/${fileName}`
+          );
+          writeQAToOutputDir(
+            formatQAOutput(choice, answersToQs),
+            selectors.getOutputPath(userData),
+            fileName
           );
         })
   },
