@@ -1,21 +1,14 @@
 import inquirer from 'inquirer';
 import { openWithVSCode } from './utils/exec';
-import { writeQAToOutputDir } from './io-handlers';
+import {
+  createFileName,
+  formatQAOutput,
+  writeQAToOutputDir
+} from './io-handlers';
 import * as selectors from './data/selectors';
 
 const findFromData = (choice, userData) =>
   selectors.getContent(userData).find(data => data.name === choice);
-
-const formatQAOutput = (choice, answersToQs) => {
-  return JSON.stringify(
-    {
-      name: choice,
-      entries: answersToQs
-    },
-    null,
-    2
-  );
-};
 
 const secondLevel = {
   answerQuestions: {
@@ -35,18 +28,22 @@ const secondLevel = {
           const choice = prompt.whichQuestions;
           const questionsToAnswer = findFromData(choice, userData).questions;
           const answersToQs = await inquirer.prompt(questionsToAnswer);
-          // todo: human readable Date 20200729_uniqueId
-          const fileName = `${Date.now()}_${choice}_answers.json`;
-          console.log(
-            `saving your answers to ${selectors.getOutputPath(
-              userData
-            )}/${fileName}`
+
+          const fileName = createFileName(
+            choice,
+            selectors.getOutputPath(userData)
           );
-          writeQAToOutputDir(
-            formatQAOutput(choice, answersToQs),
-            selectors.getOutputPath(userData),
+
+          return Promise.all([
+            writeQAToOutputDir(formatQAOutput(choice, answersToQs), fileName),
             fileName
-          );
+          ]);
+        })
+        .then(([, filePath]) => {
+          console.log('Successfully saved to', filePath);
+        })
+        .catch(err => {
+          console.error(err);
         })
   },
   lookAtNotes: {

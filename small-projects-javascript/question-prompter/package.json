@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "commander": "^4.0.0",
+    "date-fns": "^2.15.0",
     "inquirer": "^7.3.3"
   },
   "devDependencies": {

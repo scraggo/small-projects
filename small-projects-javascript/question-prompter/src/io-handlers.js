@@ -1,3 +1,5 @@
+import { format } from 'date-fns';
+
 import {
   existsAsync,
   getBackupFileLocation,
@@ -17,12 +19,22 @@ export const getConfig = commander => {
     });
 };
 
-export const writeQAToOutputDir = (
-  textToWrite,
-  backupDirAbsolute,
-  fileName
-) => {
-  const filePath = getBackupFileLocation(backupDirAbsolute, fileName);
-  // console.log(fileName, textToWrite);
-  return writeFileAsync(filePath, textToWrite, 'utf8');
+export const createFileName = (choice, dir) => {
+  const d = Date.now();
+  const fileName = `${format(d, 'yyMMdd_HHmmss')}_${choice}.json`;
+  return getBackupFileLocation(dir, fileName);
 };
+
+export const formatQAOutput = (choice, answersToQs) => {
+  return JSON.stringify(
+    {
+      name: choice,
+      entries: answersToQs
+    },
+    null,
+    2
+  );
+};
+
+export const writeQAToOutputDir = (textToWrite, filePath) =>
+  writeFileAsync(filePath, textToWrite, 'utf8');
