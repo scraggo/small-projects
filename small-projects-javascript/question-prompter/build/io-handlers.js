@@ -17,9 +17,7 @@ const getConfig = commander => {
   const configPath = (0, _fs.resolvePath)(config);
   return (0, _fs.existsAsync)(configPath).then(() => (0, _fs.readFileAsync)(configPath, {
     encoding: 'utf8'
-  })).then(async json => {
-    return JSON.parse(json);
-  });
+  })).then(async json => JSON.parse(json));
 };
 /**
  * Filenames will be unique once per second
@@ -39,12 +37,10 @@ const createFileName = (choice, dir) => {
 
 exports.createFileName = createFileName;
 
-const formatQAOutput = (choice, answersToQs) => {
-  return JSON.stringify({
-    name: choice,
-    entries: answersToQs
-  }, null, 2);
-};
+const formatQAOutput = (choice, answersToQs) => JSON.stringify({
+  name: choice,
+  entries: answersToQs
+}, null, 2);
 
 exports.formatQAOutput = formatQAOutput;
 
@@ -66,7 +62,7 @@ const writeQAToOutputDir = async (textToWrite, choice, dir) => {
     return filePath;
   } catch (error) {
     console.error(error);
-    return error;
+    throw error;
   }
 };
 

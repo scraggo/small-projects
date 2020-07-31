@@ -1,7 +1,7 @@
 {
-  "name": "node-backup-cli",
+  "name": "node-question-prompter",
   "version": "0.0.1",
-  "description": "copy files listed in a config to a backup directory",
+  "description": "prompt for user configured questions and notes",
   "main": "src/index.js",
   "author": "scraggo@gmail.com",
   "scripts": {
@@ -11,7 +11,7 @@
     "lint": "eslint . --ext .js",
     "start": "node build/index.js",
     "start-dev": "babel-node src/index.js",
-    "start-dev-ex": "babel-node src/index.js -c \"path-to/question-prompter/src/example/example.json\"",
+    "start-dev-ex": "babel-node src/index.js -c \"./src/example/example.json\"",
     "start-watch": "nodemon --exec babel-node src/index.js"
   },
   "dependencies": {

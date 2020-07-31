@@ -1,19 +1,12 @@
 {
   "config": {
-    "output": "~/Dropbox/Notes/_Inbox-Notes-DB"
+    "output": "~/Desktop"
   },
   "content": [
     {
       "name": "experience1",
       "path": "~/programming/_Github/small-projects/small-projects-javascript/question-prompter/src/example/experience1.txt",
-      "questions": [
-        {
-          "name": "what do you like?"
-        },
-        {
-          "name": "what do you dislike?"
-        }
-      ]
+      "questions": ["what do you like?", "what do you dislike?"]
     },
     {
       "name": "experience2",

@@ -1,6 +1,6 @@
-# node-backup-cli
+# node-question-prompter
 
-Simple script to copy files to a backup directory.
+"description": "prompt for user configured questions and notes"
 
 ## Usage
 
@@ -22,18 +22,7 @@ Simple script to copy files to a backup directory.
 
 ## Configuration File
 
-List the files as an array and backupDirectory in a .json config file:
-
-```json
-{
-  "files": ["~/path/to/foo.txt", "~/different/path/to/bar.txt"],
-  "backupDirectory": "/another/path/to/backups"
-}
-```
-
-`'~'` is allowed as first character to designate HOME directory. Otherwise, all paths must be absolute.
-
-`backupDirectory` must exist. It won't be created for you.
+todo
 
 ## Credit
 

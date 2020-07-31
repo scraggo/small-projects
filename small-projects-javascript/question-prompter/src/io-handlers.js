@@ -14,9 +14,7 @@ export const getConfig = commander => {
   const configPath = resolvePath(config);
   return existsAsync(configPath)
     .then(() => readFileAsync(configPath, { encoding: 'utf8' }))
-    .then(async json => {
-      return JSON.parse(json);
-    });
+    .then(json => JSON.parse(json));
 };
 
 /**
@@ -31,8 +29,8 @@ export const createFileName = (choice, dir) => {
   return getBackupFileLocation(dir, fileName);
 };
 
-export const formatQAOutput = (choice, answersToQs) => {
-  return JSON.stringify(
+export const formatQAOutput = (choice, answersToQs) =>
+  JSON.stringify(
     {
       name: choice,
       entries: answersToQs
@@ -40,7 +38,6 @@ export const formatQAOutput = (choice, answersToQs) => {
     null,
     2
   );
-};
 
 export const writeQAToOutputDir = async (textToWrite, choice, dir) => {
   try {
@@ -58,6 +55,6 @@ export const writeQAToOutputDir = async (textToWrite, choice, dir) => {
     return filePath;
   } catch (error) {
     console.error(error);
-    return error;
+    throw error;
   }
 };

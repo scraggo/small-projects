@@ -18,7 +18,26 @@ const getOutputPath = config => getConfig(config).output;
 
 exports.getOutputPath = getOutputPath;
 
-const getQuestionsList = config => getContent(config).filter(entry => Boolean(entry.questions));
+const getQuestionsList = config => getContent(config).filter(entry => Boolean(entry.questions)).map(entry => {
+  // console.log(entry);
+  const {
+    questions
+  } = entry;
+  const parsedQuestions = questions.map(q => {
+    console.log(q);
+
+    if (typeof q === 'string') {
+      return {
+        name: q
+      };
+    }
+
+    return q;
+  }); // eslint-disable-next-line no-param-reassign
+
+  entry.questions = parsedQuestions;
+  return entry;
+});
 
 exports.getQuestionsList = getQuestionsList;
 
