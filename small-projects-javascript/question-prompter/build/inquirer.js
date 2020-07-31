@@ -39,8 +39,23 @@ const secondLevel = {
       const answers = await _inquirer.default.prompt(questions);
       const filePath = await (0, _ioHandlers.writeQAToOutputDir)((0, _ioHandlers.formatQAOutput)(choice, answers), choice, selectors.getOutputPath(userData));
       console.log('Successfully saved to', filePath);
-      console.log('Opening...');
-      (0, _exec.openWithVSCode)(filePath);
+      const openFile = await _inquirer.default.prompt([{
+        type: 'list',
+        name: 'openFile',
+        message: 'Want to open your questions file?',
+        choices: [{
+          name: 'Yes'
+        }, {
+          name: 'No'
+        }]
+      }]);
+
+      if (openFile.openFile === 'Yes') {
+        console.log('Opening...');
+        (0, _exec.openWithVSCode)(filePath);
+      } else {
+        console.log('Exiting.');
+      }
     }
   },
   lookAtNotes: {

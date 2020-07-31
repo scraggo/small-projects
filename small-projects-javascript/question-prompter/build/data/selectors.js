@@ -19,13 +19,11 @@ const getOutputPath = config => getConfig(config).output;
 exports.getOutputPath = getOutputPath;
 
 const getQuestionsList = config => getContent(config).filter(entry => Boolean(entry.questions)).map(entry => {
-  // console.log(entry);
+  // re-map simple questions to inquirer's format
   const {
     questions
   } = entry;
   const parsedQuestions = questions.map(q => {
-    console.log(q);
-
     if (typeof q === 'string') {
       return {
         name: q

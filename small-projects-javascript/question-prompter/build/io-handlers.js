@@ -17,7 +17,7 @@ const getConfig = commander => {
   const configPath = (0, _fs.resolvePath)(config);
   return (0, _fs.existsAsync)(configPath).then(() => (0, _fs.readFileAsync)(configPath, {
     encoding: 'utf8'
-  })).then(async json => JSON.parse(json));
+  })).then(json => JSON.parse(json));
 };
 /**
  * Filenames will be unique once per second

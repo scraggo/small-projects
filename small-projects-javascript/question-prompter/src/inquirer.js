@@ -30,8 +30,26 @@ const secondLevel = {
         selectors.getOutputPath(userData)
       );
       console.log('Successfully saved to', filePath);
-      console.log('Opening...');
-      openWithVSCode(filePath);
+
+      const openFile = await inquirer.prompt([
+        {
+          type: 'list',
+          name: 'openFile',
+          message: 'Want to open your questions file?',
+          choices: [
+            {
+              name: 'Yes'
+            },
+            { name: 'No' }
+          ]
+        }
+      ]);
+      if (openFile.openFile === 'Yes') {
+        console.log('Opening...');
+        openWithVSCode(filePath);
+      } else {
+        console.log('Exiting.');
+      }
     }
   },
   lookAtNotes: {
