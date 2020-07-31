@@ -1,10 +1,6 @@
 import inquirer from 'inquirer';
-import { openWithVSCode } from './utils/exec';
-import {
-  createFileName,
-  formatQAOutput,
-  writeQAToOutputDir
-} from './io-handlers';
+import { openConfigWithVSCode, openWithVSCode } from './utils/exec';
+import { formatQAOutput, writeQAToOutputDir } from './io-handlers';
 import * as selectors from './data/selectors';
 
 const findFromData = (choice, userData) =>
@@ -14,37 +10,29 @@ const secondLevel = {
   answerQuestions: {
     name: 'Answer questions',
     value: 'answerQuestions',
-    cb: userData =>
-      inquirer
-        .prompt([
-          {
-            type: 'list',
-            name: 'whichQuestions',
-            message: 'Which questions do you want to answer?',
-            choices: selectors.getQuestionsList(userData)
-          }
-        ])
-        .then(async prompt => {
-          const choice = prompt.whichQuestions;
-          const questionsToAnswer = findFromData(choice, userData).questions;
-          const answersToQs = await inquirer.prompt(questionsToAnswer);
+    cb: async userData => {
+      const prompt = await inquirer.prompt([
+        {
+          type: 'list',
+          name: 'whichQuestions',
+          message: 'Which questions do you want to answer?',
+          choices: selectors.getQuestionsList(userData)
+        }
+      ]);
+      const choice = prompt.whichQuestions;
+      const { questions } = findFromData(choice, userData);
 
-          const fileName = createFileName(
-            choice,
-            selectors.getOutputPath(userData)
-          );
+      const answers = await inquirer.prompt(questions);
 
-          return Promise.all([
-            writeQAToOutputDir(formatQAOutput(choice, answersToQs), fileName),
-            fileName
-          ]);
-        })
-        .then(([, filePath]) => {
-          console.log('Successfully saved to', filePath);
-        })
-        .catch(err => {
-          console.error(err);
-        })
+      const filePath = await writeQAToOutputDir(
+        formatQAOutput(choice, answers),
+        choice,
+        selectors.getOutputPath(userData)
+      );
+      console.log('Successfully saved to', filePath);
+      console.log('Opening...');
+      openWithVSCode(filePath);
+    }
   },
   lookAtNotes: {
     name: 'Look at notes',
@@ -63,7 +51,7 @@ const secondLevel = {
           const choice = prompt.whichNote;
           const noteToView = findFromData(choice, userData).path;
           console.log(`Opening ${noteToView}...`);
-          openWithVSCode(noteToView);
+          openConfigWithVSCode(noteToView);
         })
   }
 };

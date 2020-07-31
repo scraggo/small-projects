@@ -12,10 +12,17 @@ export const writeFileAsync = promises.writeFile;
 
 /**
  * Checks if a file or directory exists
- * @param {string} path file or directory path
- * @returns {Promise} resolved with true or rejected with an error
+ * @param {string} inputPath file or directory path
+ * @returns {Promise<boolean>} exists or not
  */
-export const existsAsync = promises.access;
+export const existsAsync = async inputPath => {
+  try {
+    await promises.access(inputPath);
+    return true;
+  } catch (error) {
+    return false;
+  }
+};
 
 /**
  * If path begins with '~', turn into an absolute path

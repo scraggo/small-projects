@@ -19,6 +19,12 @@ export const getConfig = commander => {
     });
 };
 
+/**
+ * Filenames will be unique once per second
+ * @param {string} choice result
+ * @param {string} dir from config
+ * @returns {string} BackupFileLocation
+ */
 export const createFileName = (choice, dir) => {
   const d = Date.now();
   const fileName = `${format(d, 'yyMMdd_HHmmss')}_${choice}.json`;
@@ -36,5 +42,22 @@ export const formatQAOutput = (choice, answersToQs) => {
   );
 };
 
-export const writeQAToOutputDir = (textToWrite, filePath) =>
-  writeFileAsync(filePath, textToWrite, 'utf8');
+export const writeQAToOutputDir = async (textToWrite, choice, dir) => {
+  try {
+    let filePath = createFileName(choice, dir);
+    const exists = await existsAsync(filePath);
+    if (!exists) {
+      await writeFileAsync(filePath, textToWrite, 'utf8');
+      return filePath;
+    }
+    console.log('Waiting...');
+    // retry after 1.2 seconds for unique filename
+    await new Promise(resolve => setTimeout(resolve, 1200));
+    filePath = createFileName(choice, dir);
+    writeFileAsync(filePath, textToWrite, 'utf8');
+    return filePath;
+  } catch (error) {
+    console.error(error);
+    return error;
+  }
+};
