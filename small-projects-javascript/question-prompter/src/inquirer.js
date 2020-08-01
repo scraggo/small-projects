@@ -3,8 +3,24 @@ import { openConfigWithVSCode, openWithVSCode } from './utils/exec';
 import { formatQAOutput, writeQAToOutputDir } from './io-handlers';
 import * as selectors from './data/selectors';
 
-const findFromData = (choice, userData) =>
-  selectors.getContent(userData).find(data => data.name === choice);
+/**
+ * @param {Array<string|Object>} questions if {string}, simple format
+ * @returns {Array<Object>} questions mapped to inquirer format
+ */
+const mapToInquirer = questions =>
+  questions.map(q => {
+    if (typeof q === 'string') {
+      return {
+        name: q
+      };
+    }
+    return q;
+  });
+
+const getEntryQuestions = (choice, userData) => {
+  const { questions } = selectors.findFromData(choice, userData);
+  return mapToInquirer(questions);
+};
 
 const secondLevel = {
   answerQuestions: {
@@ -20,7 +36,7 @@ const secondLevel = {
         }
       ]);
       const choice = prompt.whichQuestions;
-      const { questions } = findFromData(choice, userData);
+      const questions = getEntryQuestions(choice, userData);
 
       const answers = await inquirer.prompt(questions);
 
@@ -36,12 +52,7 @@ const secondLevel = {
           type: 'list',
           name: 'openFile',
           message: 'Want to open your questions file?',
-          choices: [
-            {
-              name: 'Yes'
-            },
-            { name: 'No' }
-          ]
+          choices: mapToInquirer(['Yes', 'No'])
         }
       ]);
       if (openFile.openFile === 'Yes') {
@@ -67,7 +78,7 @@ const secondLevel = {
         ])
         .then(prompt => {
           const choice = prompt.whichNote;
-          const noteToView = findFromData(choice, userData).path;
+          const noteToView = selectors.findFromData(choice, userData).path;
           console.log(`Opening ${noteToView}...`);
           openConfigWithVSCode(noteToView);
         })
