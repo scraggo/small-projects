@@ -40,11 +40,14 @@ const secondLevel = {
 
       const answers = await inquirer.prompt(questions);
 
-      const filePath = await writeQAToOutputDir(
-        formatQAOutput(choice, answers),
+      const extension = selectors.getOutputFormat(userData);
+
+      const filePath = await writeQAToOutputDir({
         choice,
-        selectors.getOutputPath(userData)
-      );
+        dir: selectors.getOutputPath(userData),
+        extension,
+        text: formatQAOutput(choice, answers, { extension })
+      });
       console.log('Successfully saved to', filePath);
 
       const openFile = await inquirer.prompt([

@@ -11,13 +11,14 @@
     "lint": "eslint . --ext .js",
     "start": "node build/index.js",
     "start-dev": "babel-node src/index.js",
-    "start-dev-ex": "babel-node src/index.js -c \"./src/example/example.json\"",
+    "start-dev-ex": "babel-node src/index.js -c \"./src/example/example.json\" --outputFormat=yaml",
     "start-watch": "nodemon --exec babel-node src/index.js"
   },
   "dependencies": {
     "commander": "^4.0.0",
     "date-fns": "^2.15.0",
-    "inquirer": "^7.3.3"
+    "inquirer": "^7.3.3",
+    "js-yaml": "^3.14.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",

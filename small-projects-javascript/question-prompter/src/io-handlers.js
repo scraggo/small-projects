@@ -1,4 +1,5 @@
 import { format } from 'date-fns';
+import yaml from 'js-yaml';
 
 import {
   existsAsync,
@@ -8,13 +9,27 @@ import {
   writeFileAsync
 } from './utils/fs';
 
+const parseConfigFile = configPath => {
+  if (configPath.endsWith('json')) {
+    return JSON.parse;
+  }
+  if (configPath.endsWith('yaml')) {
+    return yaml.safeLoad;
+  }
+  throw new Error(`unknown extension type, ${configPath}`);
+};
+
 export const getConfig = commander => {
   // config is required, or we don't get to this point
-  const { config } = commander;
+  const { config, outputFormat = 'json' } = commander;
   const configPath = resolvePath(config);
   return existsAsync(configPath)
     .then(() => readFileAsync(configPath, { encoding: 'utf8' }))
-    .then(json => JSON.parse(json));
+    .then(configFileText => {
+      const parsed = parseConfigFile(configPath)(configFileText);
+      parsed.outputFormat = outputFormat;
+      return parsed;
+    });
 };
 
 /**
@@ -23,35 +38,40 @@ export const getConfig = commander => {
  * @param {string} dir from config
  * @returns {string} BackupFileLocation
  */
-export const createFileName = (choice, dir) => {
+export const createFileName = (choice, dir, { extension } = {}) => {
   const d = Date.now();
-  const fileName = `${format(d, 'yyMMdd_HHmmss')}_${choice}.json`;
+  const fileName = `${format(d, 'yyMMdd_HHmmss')}_${choice}.${extension}`;
   return getBackupFileLocation(dir, fileName);
 };
 
-export const formatQAOutput = (choice, answersToQs) =>
-  JSON.stringify(
-    {
-      name: choice,
-      entries: answersToQs
-    },
-    null,
-    2
-  );
+export const formatQAOutput = (choice, answersToQs, { extension } = {}) => {
+  const outputData = {
+    name: choice,
+    entries: answersToQs
+  };
 
-export const writeQAToOutputDir = async (textToWrite, choice, dir) => {
+  if (extension === 'json') {
+    return JSON.stringify(outputData, null, 2);
+  }
+  if (extension === 'yaml') {
+    return yaml.safeDump(outputData);
+  }
+  throw new Error(`unknown extension type, ${extension}`);
+};
+
+export const writeQAToOutputDir = async ({ choice, dir, extension, text }) => {
   try {
-    let filePath = createFileName(choice, dir);
+    let filePath = createFileName(choice, dir, { extension });
     const exists = await existsAsync(filePath);
     if (!exists) {
-      await writeFileAsync(filePath, textToWrite, 'utf8');
+      writeFileAsync(filePath, text, 'utf8');
       return filePath;
     }
     console.log('Waiting...');
     // retry after 1.2 seconds for unique filename
     await new Promise(resolve => setTimeout(resolve, 1200));
-    filePath = createFileName(choice, dir);
-    writeFileAsync(filePath, textToWrite, 'utf8');
+    filePath = createFileName(choice, dir, { extension });
+    writeFileAsync(filePath, text, 'utf8');
     return filePath;
   } catch (error) {
     console.error(error);

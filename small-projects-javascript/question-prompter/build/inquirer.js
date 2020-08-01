@@ -19,7 +19,26 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-const findFromData = (choice, userData) => selectors.getContent(userData).find(data => data.name === choice);
+/**
+ * @param {Array<string|Object>} questions if {string}, simple format
+ * @returns {Array<Object>} questions mapped to inquirer format
+ */
+const mapToInquirer = questions => questions.map(q => {
+  if (typeof q === 'string') {
+    return {
+      name: q
+    };
+  }
+
+  return q;
+});
+
+const getEntryQuestions = (choice, userData) => {
+  const {
+    questions
+  } = selectors.findFromData(choice, userData);
+  return mapToInquirer(questions);
+};
 
 const secondLevel = {
   answerQuestions: {
@@ -33,21 +52,23 @@ const secondLevel = {
         choices: selectors.getQuestionsList(userData)
       }]);
       const choice = prompt.whichQuestions;
-      const {
-        questions
-      } = findFromData(choice, userData);
+      const questions = getEntryQuestions(choice, userData);
       const answers = await _inquirer.default.prompt(questions);
-      const filePath = await (0, _ioHandlers.writeQAToOutputDir)((0, _ioHandlers.formatQAOutput)(choice, answers), choice, selectors.getOutputPath(userData));
+      const extension = selectors.getOutputFormat(userData);
+      const filePath = await (0, _ioHandlers.writeQAToOutputDir)({
+        choice,
+        dir: selectors.getOutputPath(userData),
+        extension,
+        text: (0, _ioHandlers.formatQAOutput)(choice, answers, {
+          extension
+        })
+      });
       console.log('Successfully saved to', filePath);
       const openFile = await _inquirer.default.prompt([{
         type: 'list',
         name: 'openFile',
         message: 'Want to open your questions file?',
-        choices: [{
-          name: 'Yes'
-        }, {
-          name: 'No'
-        }]
+        choices: mapToInquirer(['Yes', 'No'])
       }]);
 
       if (openFile.openFile === 'Yes') {
@@ -68,7 +89,7 @@ const secondLevel = {
       choices: selectors.getEntriesWithPath(userData)
     }]).then(prompt => {
       const choice = prompt.whichNote;
-      const noteToView = findFromData(choice, userData).path;
+      const noteToView = selectors.findFromData(choice, userData).path;
       console.log(`Opening ${noteToView}...`);
       (0, _exec.openConfigWithVSCode)(noteToView);
     })

@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getEntriesWithPath = exports.getQuestionsList = exports.getOutputPath = exports.getConfig = exports.getContent = void 0;
+exports.findFromData = exports.getEntriesWithPath = exports.getQuestionsList = exports.getOutputFormat = exports.getOutputPath = exports.getConfig = exports.getContent = void 0;
 
 // keeping config data model access consistent
 const getContent = config => config.content;
@@ -18,27 +18,18 @@ const getOutputPath = config => getConfig(config).output;
 
 exports.getOutputPath = getOutputPath;
 
-const getQuestionsList = config => getContent(config).filter(entry => Boolean(entry.questions)).map(entry => {
-  // re-map simple questions to inquirer's format
-  const {
-    questions
-  } = entry;
-  const parsedQuestions = questions.map(q => {
-    if (typeof q === 'string') {
-      return {
-        name: q
-      };
-    }
+const getOutputFormat = config => config.outputFormat;
 
-    return q;
-  }); // eslint-disable-next-line no-param-reassign
+exports.getOutputFormat = getOutputFormat;
 
-  entry.questions = parsedQuestions;
-  return entry;
-});
+const getQuestionsList = config => getContent(config).filter(entry => Boolean(entry.questions));
 
 exports.getQuestionsList = getQuestionsList;
 
 const getEntriesWithPath = config => getContent(config).filter(entry => Boolean(entry.path));
 
 exports.getEntriesWithPath = getEntriesWithPath;
+
+const findFromData = (choice, userData) => getContent(userData).find(data => data.name === choice);
+
+exports.findFromData = findFromData;
