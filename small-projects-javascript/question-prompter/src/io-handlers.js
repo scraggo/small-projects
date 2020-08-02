@@ -44,7 +44,7 @@ export const createFileName = (choice, dir, { extension } = {}) => {
   return getBackupFileLocation(dir, fileName);
 };
 
-export const formatQAOutput = (choice, answersToQs, { extension } = {}) => {
+export const convertQAOutput = (choice, answersToQs, { extension } = {}) => {
   const outputData = {
     name: choice,
     entries: answersToQs
@@ -54,7 +54,8 @@ export const formatQAOutput = (choice, answersToQs, { extension } = {}) => {
     return JSON.stringify(outputData, null, 2);
   }
   if (extension === 'yaml') {
-    return yaml.safeDump(outputData);
+    // lineWidth -1: disable wrapping of long lines
+    return yaml.safeDump(outputData, { lineWidth: -1 });
   }
   throw new Error(`unknown extension type, ${extension}`);
 };

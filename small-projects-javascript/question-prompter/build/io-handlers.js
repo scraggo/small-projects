@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.writeQAToOutputDir = exports.formatQAOutput = exports.createFileName = exports.getConfig = void 0;
+exports.writeQAToOutputDir = exports.convertQAOutput = exports.createFileName = exports.getConfig = void 0;
 
 var _dateFns = require("date-fns");
 
@@ -29,7 +29,7 @@ const getConfig = commander => {
   // config is required, or we don't get to this point
   const {
     config,
-    outputFormat
+    outputFormat = 'json'
   } = commander;
   const configPath = (0, _fs.resolvePath)(config);
   return (0, _fs.existsAsync)(configPath).then(() => (0, _fs.readFileAsync)(configPath, {
@@ -51,7 +51,7 @@ const getConfig = commander => {
 exports.getConfig = getConfig;
 
 const createFileName = (choice, dir, {
-  extension = 'json'
+  extension
 } = {}) => {
   const d = Date.now();
   const fileName = `${(0, _dateFns.format)(d, 'yyMMdd_HHmmss')}_${choice}.${extension}`;
@@ -60,8 +60,8 @@ const createFileName = (choice, dir, {
 
 exports.createFileName = createFileName;
 
-const formatQAOutput = (choice, answersToQs, {
-  extension = 'json'
+const convertQAOutput = (choice, answersToQs, {
+  extension
 } = {}) => {
   const outputData = {
     name: choice,
@@ -73,18 +73,21 @@ const formatQAOutput = (choice, answersToQs, {
   }
 
   if (extension === 'yaml') {
-    return _jsYaml.default.safeDump(outputData);
+    // lineWidth -1: disable wrapping of long lines
+    return _jsYaml.default.safeDump(outputData, {
+      lineWidth: -1
+    });
   }
 
   throw new Error(`unknown extension type, ${extension}`);
 };
 
-exports.formatQAOutput = formatQAOutput;
+exports.convertQAOutput = convertQAOutput;
 
 const writeQAToOutputDir = async ({
   choice,
   dir,
-  extension = 'json',
+  extension,
   text
 }) => {
   try {

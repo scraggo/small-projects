@@ -59,7 +59,7 @@ const secondLevel = {
         choice,
         dir: selectors.getOutputPath(userData),
         extension,
-        text: (0, _ioHandlers.formatQAOutput)(choice, answers, {
+        text: (0, _ioHandlers.convertQAOutput)(choice, answers, {
           extension
         })
       });

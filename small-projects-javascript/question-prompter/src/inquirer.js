@@ -1,6 +1,6 @@
 import inquirer from 'inquirer';
 import { openConfigWithVSCode, openWithVSCode } from './utils/exec';
-import { formatQAOutput, writeQAToOutputDir } from './io-handlers';
+import { convertQAOutput, writeQAToOutputDir } from './io-handlers';
 import * as selectors from './data/selectors';
 
 /**
@@ -46,7 +46,7 @@ const secondLevel = {
         choice,
         dir: selectors.getOutputPath(userData),
         extension,
-        text: formatQAOutput(choice, answers, { extension })
+        text: convertQAOutput(choice, answers, { extension })
       });
       console.log('Successfully saved to', filePath);
 
