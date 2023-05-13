@@ -5,8 +5,14 @@ Public copies from my personal notes collection.
 ```sh
 cd path-to-this-directory
 
-# `ln` creates a "hard" link that changes with source changes
-ln file-from-personal-notes.md ./file-from-personal-notes.md
+./link.sh # follow prompt
 
 # commit and push!
+```
+
+The `link.sh` script is effectively doing this:
+
+```sh
+# `ln` creates a "hard" link that changes with source changes
+ln file-from-personal-notes.md ./file-from-personal-notes.md
 ```
