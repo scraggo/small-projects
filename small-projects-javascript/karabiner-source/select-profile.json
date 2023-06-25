@@ -1,0 +1,21 @@
+{
+  "description": "insert -> select profile: DEC1",
+  "manipulators": [
+    {
+      "from": {
+        "key_code": "insert",
+        "modifiers": {
+          "optional": [
+            "any"
+          ]
+        }
+      },
+      "to": [
+        {
+          "shell_command": "'/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli' --select-profile 'DEC1'"
+        }
+      ],
+      "type": "basic"
+    }
+  ]
+}
