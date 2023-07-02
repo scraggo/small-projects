@@ -1,0 +1,850 @@
+[
+  {
+    "album": "Willy Wonka & The Chocolate Factory: Music From the Original Soundtrack of the Paramount Picture",
+    "authors": [
+      "Jack Albertson, Peter Ostrum"
+    ],
+    "track": "(I’ve Got a) Golden Ticket.flac"
+  },
+  {
+    "album": "MMPR: THE ALBUM",
+    "authors": [
+      "Aaron Waters"
+    ],
+    "track": "5-4-1.flac"
+  },
+  {
+    "album": "Red Dragonfly",
+    "authors": [
+      "Shinobu Sato"
+    ],
+    "track": "Amazing Grace.flac"
+  },
+  {
+    "album": "The Essential John Denver",
+    "authors": [
+      "John Denver"
+    ],
+    "track": "Annie’s Song.flac"
+  },
+  {
+    "album": "This Is the One",
+    "authors": [
+      "Utada Hikaru"
+    ],
+    "track": "Apple And Cinnamon.flac"
+  },
+  {
+    "album": "Deja View",
+    "authors": [
+      "North Texas Wind Symphony"
+    ],
+    "track": "Awayday.flac"
+  },
+  {
+    "album": "Calling All Dawns: A Song Cycle",
+    "authors": [
+      "Christopher Tin, Soweto Gospel Choir"
+    ],
+    "track": "Baba yetu.flac"
+  },
+  {
+    "album": "The Essential John Denver",
+    "authors": [],
+    "track": "Baby, You Look Good to Me Tonight.flac"
+  },
+  {
+    "album": "The Black Mages",
+    "authors": [
+      "The Black Mages"
+    ],
+    "track": "Battle Scene.flac"
+  },
+  {
+    "album": "The Black Mages",
+    "authors": [
+      "The Black Mages"
+    ],
+    "track": "Battle Theme.flac"
+  },
+  {
+    "album": "Deja View",
+    "authors": [
+      "North Texas Wind Symphony"
+    ],
+    "track": "Blue Shades.flac"
+  },
+  {
+    "album": "Bring Him Home",
+    "authors": [
+      "The Valjean Quartet"
+    ],
+    "track": "Bring Him Home.flac"
+  },
+  {
+    "album": "Build Me Up Buttercup",
+    "authors": [
+      "The Foundations"
+    ],
+    "track": "Build Me Up Buttercup.flac"
+  },
+  {
+    "album": "Splatoon ORIGINAL SOUNDTRACK —Splatune—",
+    "authors": [
+      "\\U30b7\\U30aa\\U30ab\\U30e9\\U30fc\\U30b9\\U3099"
+    ],
+    "track": "Calamari Inkantation.flac"
+  },
+  {
+    "album": "Les Paul & Friends: American Made World Played",
+    "authors": [],
+    "track": "Caravan.flac"
+  },
+  {
+    "album": "Deja View",
+    "authors": [
+      "North Texas Wind Symphony"
+    ],
+    "track": "Cave.flac"
+  },
+  {
+    "album": "Hush",
+    "authors": [
+      "Yo\\U2010Yo Ma"
+    ],
+    "track": "Coyote.flac"
+  },
+  {
+    "album": "The Black Mages",
+    "authors": [
+      "The Black Mages"
+    ],
+    "track": "Dancing Mad.flac"
+  },
+  {
+    "album": "Sing or Die",
+    "authors": [
+      "Dreams Come True"
+    ],
+    "track": "Dandelion Hill.flac"
+  },
+  {
+    "album": "Kingdom Hearts II",
+    "authors": [],
+    "track": "Dearly Beloved -Reprise-.flac"
+  },
+  {
+    "album": "TRON: Legacy",
+    "authors": [
+      "Daft Punk"
+    ],
+    "track": "Derezzed.flac"
+  },
+  {
+    "album": "KINGDOM HEARTS",
+    "authors": [],
+    "track": "Destiny Islands.flac"
+  },
+  {
+    "album": "This Is the One",
+    "authors": [
+      "Utada Hikaru"
+    ],
+    "track": "Dirty Desire.flac"
+  },
+  {
+    "album": "Willy Wonka & The Chocolate Factory: Music From the Original Soundtrack of the Paramount Picture",
+    "authors": [],
+    "track": "Everlasting Gobstoppers - Oompa Loompa.flac"
+  },
+  {
+    "album": "The Blues Brothers",
+    "authors": [],
+    "track": "Everybody Needs Somebody to Love.flac"
+  },
+  {
+    "album": "Copland Conducts Copland - Expanded Edition (Fanfare for the Common Man, Appalachian Spring, Old American Songs (Complete), Rodeo: Four Dance Episodes)",
+    "authors": [
+      "Aaron Copland, London Symphony Orchestra, William Warfield"
+    ],
+    "track": "Fanfare for the Common Man.flac"
+  },
+  {
+    "album": "Hush",
+    "authors": [
+      "Yo\\U2010Yo Ma"
+    ],
+    "track": "Flight of the Bumblebee.flac"
+  },
+  {
+    "album": "Les Paul & Friends: American Made World Played",
+    "authors": [
+      "Les Paul, Steve Miller"
+    ],
+    "track": "Fly Like an Eagle (2005).flac"
+  },
+  {
+    "album": "The Black Mages",
+    "authors": [
+      "The Black Mages"
+    ],
+    "track": "Force Your Way.flac"
+  },
+  {
+    "album": "Kirby's Dream Collection Special Edition Soundtrack",
+    "authors": [
+      "Kirby Air Ride"
+    ],
+    "track": "Fountain of Dreams.flac"
+  },
+  {
+    "album": "Kingdom Hearts II",
+    "authors": [],
+    "track": "Friends in My Heart.flac"
+  },
+  {
+    "album": "Kirby's Dream Collection Special Edition Soundtrack",
+    "authors": [
+      "Kirby Super Star"
+    ],
+    "track": "Get Up and Go-urmet!.flac"
+  },
+  {
+    "album": "The Blues Brothers",
+    "authors": [],
+    "track": "Gimme Some Lovin’.flac"
+  },
+  {
+    "album": "MMPR: THE ALBUM",
+    "authors": [
+      "Aaron Waters"
+    ],
+    "track": "Go Go Power Rangers (TV Version).flac"
+  },
+  {
+    "album": "MMPR: THE ALBUM",
+    "authors": [
+      "Aaron Waters"
+    ],
+    "track": "Go Green Ranger Go.flac"
+  },
+  {
+    "album": "Pet Sounds",
+    "authors": [
+      "The Beach Boys"
+    ],
+    "track": "God Only Knows.flac"
+  },
+  {
+    "album": "The Essential John Denver",
+    "authors": [
+      "John Denver"
+    ],
+    "track": "Goodbye Again.flac"
+  },
+  {
+    "album": "Red Dragonfly",
+    "authors": [
+      "Shinobu Sato"
+    ],
+    "track": "Grandfather's Clock.flac"
+  },
+  {
+    "album": "Kirby's Dream Collection Special Edition Soundtrack",
+    "authors": [
+      "Kirby's Dream Land"
+    ],
+    "track": "Green Greens.flac"
+  },
+  {
+    "album": "Red Dragonfly",
+    "authors": [
+      "Shinobu Sato"
+    ],
+    "track": "Harvest Home.flac"
+  },
+  {
+    "album": "KINGDOM HEARTS",
+    "authors": [
+      "\\U5b87\\U591a\\U7530\\U30d2\\U30ab\\U30eb"
+    ],
+    "track": "Hikari (KINGDOM Orchestra instrumental version).flac"
+  },
+  {
+    "album": "Hush",
+    "authors": [
+      "Yo\\U2010Yo Ma"
+    ],
+    "track": "Hoedown!.flac"
+  },
+  {
+    "album": "The Very Best Of Les Paul & Mary Ford",
+    "authors": [
+      "Les Paul & Mary Ford"
+    ],
+    "track": "How High The Moon.flac"
+  },
+  {
+    "album": "Hush",
+    "authors": [
+      "Yo\\U2010Yo Ma"
+    ],
+    "track": "Hush Little Baby.flac"
+  },
+  {
+    "album": "Willy Wonka & The Chocolate Factory: Music From the Original Soundtrack of the Paramount Picture",
+    "authors": [
+      "Julie Dawn Cole"
+    ],
+    "track": "I Want It Now - Oompa Loompa.flac"
+  },
+  {
+    "album": "Splatoon ORIGINAL SOUNDTRACK —Splatune—",
+    "authors": [
+      "DJ Octavio"
+    ],
+    "track": "I am Octavio.flac"
+  },
+  {
+    "album": "Splatoon ORIGINAL SOUNDTRACK —Splatune—",
+    "authors": [
+      "\\U30b7\\U30aa\\U30ab\\U30e9\\U30fc\\U30b9\\U3099"
+    ],
+    "track": "Ink Me Up.flac"
+  },
+  {
+    "album": "The Blues Brothers",
+    "authors": [],
+    "track": "Jailhouse Rock.flac"
+  },
+  {
+    "album": "Red Dragonfly",
+    "authors": [
+      "Shinobu Sato"
+    ],
+    "track": "Jesu, Joy of Man's Desiring.flac"
+  },
+  {
+    "album": "Jurassic Park: Original Motion Picture Soundtrack",
+    "authors": [
+      "John Williams"
+    ],
+    "track": "Journey to the Island.flac"
+  },
+  {
+    "album": "Jurassic Park: Original Motion Picture Soundtrack",
+    "authors": [
+      "John Williams"
+    ],
+    "track": "Jurassic Park- End Credits.flac"
+  },
+  {
+    "album": "KINGDOM HEARTS",
+    "authors": [],
+    "track": "Kairi I.flac"
+  },
+  {
+    "album": "Sing or Die",
+    "authors": [
+      "Dreams Come True"
+    ],
+    "track": "Kelo Kelo.flac"
+  },
+  {
+    "album": "Klarinettenkonzert K 622",
+    "authors": [
+      "Sabine Meyer, Staatskapelle Dresden, Hans Vonk"
+    ],
+    "track": "Klarinettenkonzert A-Dur, KV 622- I. Allegro.flac"
+  },
+  {
+    "album": "Klarinettenkonzert K 622",
+    "authors": [
+      "Sabine Meyer, Staatskapelle Dresden, Hans Vonk"
+    ],
+    "track": "Klarinettenkonzert A-Dur, KV 622- II. Adagio.flac"
+  },
+  {
+    "album": "Klarinettenkonzert K 622",
+    "authors": [
+      "Sabine Meyer, Staatskapelle Dresden, Hans Vonk"
+    ],
+    "track": "Klarinettenkonzert A-Dur, KV 622- III. Rondo. Allegro.flac"
+  },
+  {
+    "album": "Splatoon ORIGINAL SOUNDTRACK —Splatune—",
+    "authors": [
+      "Squid Squad"
+    ],
+    "track": "Kraken Up.flac"
+  },
+  {
+    "album": "Kingdom Hearts II",
+    "authors": [],
+    "track": "Lazy Afternoon.flac"
+  },
+  {
+    "album": "The Essential John Denver",
+    "authors": [
+      "John Denver"
+    ],
+    "track": "Leaving on a Jet Plane.flac"
+  },
+  {
+    "album": "KINGDOM HEARTS",
+    "authors": [],
+    "track": "March Caprice for Piano and Orchestra.flac"
+  },
+  {
+    "album": "Splatoon ORIGINAL SOUNDTRACK —Splatune—",
+    "authors": [
+      "\\U30b7\\U30aa\\U30ab\\U30e9\\U30fc\\U30b9\\U3099"
+    ],
+    "track": "Maritime Memory.flac"
+  },
+  {
+    "album": "Red Dragonfly",
+    "authors": [
+      "Shinobu Sato"
+    ],
+    "track": "Mebae.flac"
+  },
+  {
+    "album": "The Blues Brothers",
+    "authors": [
+      "Cab Calloway"
+    ],
+    "track": "Minnie the Moocher.flac"
+  },
+  {
+    "album": "Jurassic Park: Original Motion Picture Soundtrack",
+    "authors": [
+      "John Williams"
+    ],
+    "track": "My Friend, the Brachiosaurus.flac"
+  },
+  {
+    "album": "Piano Music",
+    "authors": [
+      "Toru Takemitsu"
+    ],
+    "track": "No. 2 Clouds.flac"
+  },
+  {
+    "album": "Splatoon ORIGINAL SOUNDTRACK —Splatune—",
+    "authors": [
+      "\\U30b7\\U30aa\\U30ab\\U30e9\\U30fc\\U30b9\\U3099"
+    ],
+    "track": "Now or Never!.flac"
+  },
+  {
+    "album": "Willy Wonka & The Chocolate Factory: Music From the Original Soundtrack of the Paramount Picture",
+    "authors": [],
+    "track": "Oompa Loompa.flac"
+  },
+  {
+    "album": "Red Dragonfly",
+    "authors": [
+      "Shinobu Sato"
+    ],
+    "track": "Over the Rainbow.flac"
+  },
+  {
+    "album": "TRON: Legacy",
+    "authors": [
+      "Daft Punk"
+    ],
+    "track": "Overture.flac"
+  },
+  {
+    "album": "Kingdom Hearts II",
+    "authors": [],
+    "track": "Part of Your World.flac"
+  },
+  {
+    "album": "Kingdom Hearts II",
+    "authors": [],
+    "track": "Passion - Kingdom Orchestra Instrumental Version.flac"
+  },
+  {
+    "album": "The Blues Brothers",
+    "authors": [],
+    "track": "Peter Gunn Theme.flac"
+  },
+  {
+    "album": "Piano Music",
+    "authors": [
+      "Toru Takemitsu"
+    ],
+    "track": "Piano Pieces for Children (1978) - No. 1 Breeze.flac"
+  },
+  {
+    "album": "Kirby's Dream Collection Special Edition Soundtrack",
+    "authors": [
+      "Kirby 64 The Crystal Shards"
+    ],
+    "track": "Planet Popstar.flac"
+  },
+  {
+    "album": "Red Dragonfly",
+    "authors": [
+      "Shinobu Sato"
+    ],
+    "track": "Planxty Irwin.flac"
+  },
+  {
+    "album": "This Is the One",
+    "authors": [
+      "Utada Hikaru"
+    ],
+    "track": "Poppin'.flac"
+  },
+  {
+    "album": "Red Dragonfly",
+    "authors": [
+      "Shinobu Sato"
+    ],
+    "track": "Prelude #2.flac"
+  },
+  {
+    "album": "Willy Wonka & The Chocolate Factory: Music From the Original Soundtrack of the Paramount Picture",
+    "authors": [
+      "Gene Wilder"
+    ],
+    "track": "Pure Imagination.flac"
+  },
+  {
+    "album": "String Quartets, op. 33 \"Russian\": No. 1 / No. 2 \"The Joke\" / No. 5 \"How do you do?\"",
+    "authors": [
+      "Koda\\U0301ly Quartet"
+    ],
+    "track": "Quartet no. 30 in E-flat major, op. 33 no. 2 ''The Joke''- IV. Finale.flac"
+  },
+  {
+    "album": "Piano Music",
+    "authors": [
+      "Toru Takemitsu"
+    ],
+    "track": "Rain Tree Sketch II (1992).flac"
+  },
+  {
+    "album": "Red Dragonfly",
+    "authors": [
+      "Shinobu Sato"
+    ],
+    "track": "Red Dragonfly.flac"
+  },
+  {
+    "album": "Star Wars: The Force Awakens",
+    "authors": [
+      "John Williams"
+    ],
+    "track": "Rey's Theme.flac"
+  },
+  {
+    "album": "The Essential John Denver",
+    "authors": [
+      "John Denver"
+    ],
+    "track": "Rocky Mountain High.flac"
+  },
+  {
+    "album": "Red Dragonfly",
+    "authors": [
+      "Shinobu Sato"
+    ],
+    "track": "Sakura Variations.flac"
+  },
+  {
+    "album": "This Is the One",
+    "authors": [
+      "Utada Hikaru"
+    ],
+    "track": "Sanctuary (Ending).flac"
+  },
+  {
+    "album": "This Is the One",
+    "authors": [
+      "Utada Hikaru"
+    ],
+    "track": "Sanctuary (Opening).flac"
+  },
+  {
+    "album": "The Blues Brothers",
+    "authors": [
+      "Ray Charles, Blues Brothers"
+    ],
+    "track": "Shake a Tail Feather.flac"
+  },
+  {
+    "album": "The Blues Brothers",
+    "authors": [],
+    "track": "She Caught the Katy.flac"
+  },
+  {
+    "album": "Red Dragonfly",
+    "authors": [
+      "Shinobu Sato"
+    ],
+    "track": "Si Bheag, Si Mhor.flac"
+  },
+  {
+    "album": "Red Dragonfly",
+    "authors": [
+      "Shinobu Sato"
+    ],
+    "track": "Silver Swan.flac"
+  },
+  {
+    "album": "Red Dragonfly",
+    "authors": [
+      "Shinobu Sato"
+    ],
+    "track": "Simple Gifts.flac"
+  },
+  {
+    "album": "This Is the One",
+    "authors": [
+      "Utada Hikaru"
+    ],
+    "track": "Simple and Clean.flac"
+  },
+  {
+    "album": "Pet Sounds",
+    "authors": [
+      "The Beach Boys"
+    ],
+    "track": "Sloop John B.flac"
+  },
+  {
+    "album": "Sing or Die",
+    "authors": [
+      "Dreams Come True"
+    ],
+    "track": "Song of Joy.flac"
+  },
+  {
+    "album": "Kingdom Hearts II",
+    "authors": [],
+    "track": "Sora.flac"
+  },
+  {
+    "album": "Splatoon ORIGINAL SOUNDTRACK —Splatune—",
+    "authors": [
+      "Squid Squad"
+    ],
+    "track": "Splattack!.flac"
+  },
+  {
+    "album": "Hush",
+    "authors": [
+      "Yo\\U2010Yo Ma"
+    ],
+    "track": "Stars.flac"
+  },
+  {
+    "album": "Cello Suites",
+    "authors": [
+      "Pierre Fournier"
+    ],
+    "track": "Suite no. 1 in G major BWV 1007 - I. Prélude.flac"
+  },
+  {
+    "album": "The Essential John Denver",
+    "authors": [
+      "John Denver"
+    ],
+    "track": "Sunshine on My Shoulders.flac"
+  },
+  {
+    "album": "The Blues Brothers",
+    "authors": [],
+    "track": "Sweet Home Chicago.flac"
+  },
+  {
+    "album": "The Essential John Denver",
+    "authors": [
+      "John Denver"
+    ],
+    "track": "Sweet Surrender.flac"
+  },
+  {
+    "album": "TRON: Legacy",
+    "authors": [
+      "Daft Punk"
+    ],
+    "track": "TRON Legacy (End Titles).flac"
+  },
+  {
+    "album": "The Essential John Denver",
+    "authors": [
+      "John Denver"
+    ],
+    "track": "Take Me Home, Country Roads.flac"
+  },
+  {
+    "album": "The Essential John Denver",
+    "authors": [
+      "John Denver"
+    ],
+    "track": "Thank God I'm a Country Boy.flac"
+  },
+  {
+    "album": "Kingdom Hearts II",
+    "authors": [],
+    "track": "The Afternoon Streets.flac"
+  },
+  {
+    "album": "Willy Wonka & The Chocolate Factory: Music From the Original Soundtrack of the Paramount Picture",
+    "authors": [
+      "Aubrey Woods"
+    ],
+    "track": "The Candy Man.flac"
+  },
+  {
+    "album": "TRON: Legacy",
+    "authors": [
+      "Daft Punk"
+    ],
+    "track": "The Grid.flac"
+  },
+  {
+    "album": "The Blues Brothers",
+    "authors": [
+      "James Brown, Rev. James Cleveland Choir"
+    ],
+    "track": "The Old Landmark.flac"
+  },
+  {
+    "album": "Walt Disney's Fantasia",
+    "authors": [
+      "The Philadelphia Orchestra"
+    ],
+    "track": "The Sorcerer's Apprentice.flac"
+  },
+  {
+    "album": "Willy Wonka & The Chocolate Factory: Music From the Original Soundtrack of the Paramount Picture",
+    "authors": [
+      "Gene Wilder"
+    ],
+    "track": "The Wondrous Boat Ride.flac"
+  },
+  {
+    "album": "Jurassic Park: Original Motion Picture Soundtrack",
+    "authors": [
+      "John Williams"
+    ],
+    "track": "Theme From Jurassic Park.flac"
+  },
+  {
+    "album": "The Blues Brothers",
+    "authors": [],
+    "track": "Theme From Rawhide.flac"
+  },
+  {
+    "album": "The Blues Brothers",
+    "authors": [
+      "Blues Brothers, Aretha Franklin"
+    ],
+    "track": "Think.flac"
+  },
+  {
+    "album": "Sing or Die",
+    "authors": [
+      "Dreams Come True"
+    ],
+    "track": "This is not love at all.flac"
+  },
+  {
+    "album": "The Black Mages",
+    "authors": [
+      "The Black Mages"
+    ],
+    "track": "Those Who Fight Further.flac"
+  },
+  {
+    "album": "Red Dragonfly",
+    "authors": [
+      "Shinobu Sato"
+    ],
+    "track": "Three Shamisen Pieces.flac"
+  },
+  {
+    "album": "Brave",
+    "authors": [
+      "Julie Fowlis"
+    ],
+    "track": "Touch the Sky.flac"
+  },
+  {
+    "album": "KINGDOM HEARTS",
+    "authors": [],
+    "track": "Traverse Town.flac"
+  },
+  {
+    "album": "Kingdom Hearts II",
+    "authors": [],
+    "track": "Ursula's Revenge.flac"
+  },
+  {
+    "album": "MMPR: THE ALBUM",
+    "authors": [
+      "Aaron Waters"
+    ],
+    "track": "We Need A Hero.flac"
+  },
+  {
+    "album": "Jurassic Park: Original Motion Picture Soundtrack",
+    "authors": [
+      "John Williams"
+    ],
+    "track": "Welcome to Jurassic Park.flac"
+  },
+  {
+    "album": "The Very Best of Tower of Power: The Warner Years",
+    "authors": [
+      "Tower of Power"
+    ],
+    "track": "What Is Hip.flac"
+  },
+  {
+    "album": "MMPR: THE ALBUM",
+    "authors": [
+      "Aaron Waters"
+    ],
+    "track": "White Ranger Tiger Power.flac"
+  },
+  {
+    "album": "Willy Wonka & The Chocolate Factory: Music From the Original Soundtrack of the Paramount Picture",
+    "authors": [],
+    "track": "Wonkamobile, Wonkavision - Oompa Loompa.flac"
+  },
+  {
+    "album": "Edward MacDowell: Piano Music Vol 1",
+    "authors": [
+      "James Barbagallo"
+    ],
+    "track": "Woodland Sketches- To a Wild Rose.flac"
+  },
+  {
+    "album": "Pet Sounds",
+    "authors": [
+      "The Beach Boys"
+    ],
+    "track": "Wouldn't It Be Nice.flac"
+  },
+  {
+    "album": "The Very Best of Tower of Power: The Warner Years",
+    "authors": [
+      "Tower of Power"
+    ],
+    "track": "You Got to Funkifize.flac"
+  },
+  {
+    "album": "MMPR: THE ALBUM",
+    "authors": [
+      "Aaron Waters"
+    ],
+    "track": "Zords.flac"
+  }
+]

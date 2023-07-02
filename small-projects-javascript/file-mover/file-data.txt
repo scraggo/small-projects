@@ -1,0 +1,726 @@
+[
+  {
+    "album": "Willy Wonka & The Chocolate Factory: Music From the Original Soundtrack of the Paramount Picture",
+    "authors": [
+      "Jack Albertson, Peter Ostrum"
+    ]
+  },
+  {
+    "album": "(null)",
+    "authors": []
+  },
+  {
+    "album": "MMPR: THE ALBUM",
+    "authors": [
+      "Aaron Waters"
+    ]
+  },
+  {
+    "album": "Red Dragonfly",
+    "authors": [
+      "Shinobu Sato"
+    ]
+  },
+  {
+    "album": "The Essential John Denver",
+    "authors": [
+      "John Denver"
+    ]
+  },
+  {
+    "album": "This Is the One",
+    "authors": [
+      "Utada Hikaru"
+    ]
+  },
+  {
+    "album": "Deja View",
+    "authors": [
+      "North Texas Wind Symphony"
+    ]
+  },
+  {
+    "album": "Calling All Dawns: A Song Cycle",
+    "authors": [
+      "Christopher Tin, Soweto Gospel Choir"
+    ]
+  },
+  {
+    "album": "The Essential John Denver",
+    "authors": []
+  },
+  {
+    "album": "The Black Mages",
+    "authors": [
+      "The Black Mages"
+    ]
+  },
+  {
+    "album": "The Black Mages",
+    "authors": [
+      "The Black Mages"
+    ]
+  },
+  {
+    "album": "Deja View",
+    "authors": [
+      "North Texas Wind Symphony"
+    ]
+  },
+  {
+    "album": "Bring Him Home",
+    "authors": [
+      "The Valjean Quartet"
+    ]
+  },
+  {
+    "album": "Build Me Up Buttercup",
+    "authors": [
+      "The Foundations"
+    ]
+  },
+  {
+    "album": "Splatoon ORIGINAL SOUNDTRACK —Splatune—",
+    "authors": [
+      "\\U30b7\\U30aa\\U30ab\\U30e9\\U30fc\\U30b9\\U3099"
+    ]
+  },
+  {
+    "album": "Les Paul & Friends: American Made World Played",
+    "authors": []
+  },
+  {
+    "album": "Deja View",
+    "authors": [
+      "North Texas Wind Symphony"
+    ]
+  },
+  {
+    "album": "Hush",
+    "authors": [
+      "Yo\\U2010Yo Ma"
+    ]
+  },
+  {
+    "album": "The Black Mages",
+    "authors": [
+      "The Black Mages"
+    ]
+  },
+  {
+    "album": "Sing or Die",
+    "authors": [
+      "Dreams Come True"
+    ]
+  },
+  {
+    "album": "Kingdom Hearts II",
+    "authors": []
+  },
+  {
+    "album": "TRON: Legacy",
+    "authors": [
+      "Daft Punk"
+    ]
+  },
+  {
+    "album": "KINGDOM HEARTS",
+    "authors": []
+  },
+  {
+    "album": "This Is the One",
+    "authors": [
+      "Utada Hikaru"
+    ]
+  },
+  {
+    "album": "Willy Wonka & The Chocolate Factory: Music From the Original Soundtrack of the Paramount Picture",
+    "authors": []
+  },
+  {
+    "album": "The Blues Brothers",
+    "authors": []
+  },
+  {
+    "album": "Copland Conducts Copland - Expanded Edition (Fanfare for the Common Man, Appalachian Spring, Old American Songs (Complete), Rodeo: Four Dance Episodes)",
+    "authors": [
+      "Aaron Copland, London Symphony Orchestra, William Warfield"
+    ]
+  },
+  {
+    "album": "Hush",
+    "authors": [
+      "Yo\\U2010Yo Ma"
+    ]
+  },
+  {
+    "album": "Les Paul & Friends: American Made World Played",
+    "authors": [
+      "Les Paul, Steve Miller"
+    ]
+  },
+  {
+    "album": "The Black Mages",
+    "authors": [
+      "The Black Mages"
+    ]
+  },
+  {
+    "album": "Kirby's Dream Collection Special Edition Soundtrack",
+    "authors": [
+      "Kirby Air Ride"
+    ]
+  },
+  {
+    "album": "Kingdom Hearts II",
+    "authors": []
+  },
+  {
+    "album": "Kirby's Dream Collection Special Edition Soundtrack",
+    "authors": [
+      "Kirby Super Star"
+    ]
+  },
+  {
+    "album": "The Blues Brothers",
+    "authors": []
+  },
+  {
+    "album": "MMPR: THE ALBUM",
+    "authors": [
+      "Aaron Waters"
+    ]
+  },
+  {
+    "album": "MMPR: THE ALBUM",
+    "authors": [
+      "Aaron Waters"
+    ]
+  },
+  {
+    "album": "Pet Sounds",
+    "authors": [
+      "The Beach Boys"
+    ]
+  },
+  {
+    "album": "The Essential John Denver",
+    "authors": [
+      "John Denver"
+    ]
+  },
+  {
+    "album": "Red Dragonfly",
+    "authors": [
+      "Shinobu Sato"
+    ]
+  },
+  {
+    "album": "Kirby's Dream Collection Special Edition Soundtrack",
+    "authors": [
+      "Kirby's Dream Land"
+    ]
+  },
+  {
+    "album": "Red Dragonfly",
+    "authors": [
+      "Shinobu Sato"
+    ]
+  },
+  {
+    "album": "KINGDOM HEARTS",
+    "authors": [
+      "\\U5b87\\U591a\\U7530\\U30d2\\U30ab\\U30eb"
+    ]
+  },
+  {
+    "album": "Hush",
+    "authors": [
+      "Yo\\U2010Yo Ma"
+    ]
+  },
+  {
+    "album": "The Very Best Of Les Paul & Mary Ford",
+    "authors": [
+      "Les Paul & Mary Ford"
+    ]
+  },
+  {
+    "album": "Hush",
+    "authors": [
+      "Yo\\U2010Yo Ma"
+    ]
+  },
+  {
+    "album": "Willy Wonka & The Chocolate Factory: Music From the Original Soundtrack of the Paramount Picture",
+    "authors": [
+      "Julie Dawn Cole"
+    ]
+  },
+  {
+    "album": "Splatoon ORIGINAL SOUNDTRACK —Splatune—",
+    "authors": [
+      "DJ Octavio"
+    ]
+  },
+  {
+    "album": "Splatoon ORIGINAL SOUNDTRACK —Splatune—",
+    "authors": [
+      "\\U30b7\\U30aa\\U30ab\\U30e9\\U30fc\\U30b9\\U3099"
+    ]
+  },
+  {
+    "album": "The Blues Brothers",
+    "authors": []
+  },
+  {
+    "album": "Red Dragonfly",
+    "authors": [
+      "Shinobu Sato"
+    ]
+  },
+  {
+    "album": "Jurassic Park: Original Motion Picture Soundtrack",
+    "authors": [
+      "John Williams"
+    ]
+  },
+  {
+    "album": "Jurassic Park: Original Motion Picture Soundtrack",
+    "authors": [
+      "John Williams"
+    ]
+  },
+  {
+    "album": "KINGDOM HEARTS",
+    "authors": []
+  },
+  {
+    "album": "Sing or Die",
+    "authors": [
+      "Dreams Come True"
+    ]
+  },
+  {
+    "album": "Klarinettenkonzert K 622",
+    "authors": [
+      "Sabine Meyer, Staatskapelle Dresden, Hans Vonk"
+    ]
+  },
+  {
+    "album": "Klarinettenkonzert K 622",
+    "authors": [
+      "Sabine Meyer, Staatskapelle Dresden, Hans Vonk"
+    ]
+  },
+  {
+    "album": "Klarinettenkonzert K 622",
+    "authors": [
+      "Sabine Meyer, Staatskapelle Dresden, Hans Vonk"
+    ]
+  },
+  {
+    "album": "Splatoon ORIGINAL SOUNDTRACK —Splatune—",
+    "authors": [
+      "Squid Squad"
+    ]
+  },
+  {
+    "album": "Kingdom Hearts II",
+    "authors": []
+  },
+  {
+    "album": "The Essential John Denver",
+    "authors": [
+      "John Denver"
+    ]
+  },
+  {
+    "album": "KINGDOM HEARTS",
+    "authors": []
+  },
+  {
+    "album": "Splatoon ORIGINAL SOUNDTRACK —Splatune—",
+    "authors": [
+      "\\U30b7\\U30aa\\U30ab\\U30e9\\U30fc\\U30b9\\U3099"
+    ]
+  },
+  {
+    "album": "Red Dragonfly",
+    "authors": [
+      "Shinobu Sato"
+    ]
+  },
+  {
+    "album": "The Blues Brothers",
+    "authors": [
+      "Cab Calloway"
+    ]
+  },
+  {
+    "album": "Jurassic Park: Original Motion Picture Soundtrack",
+    "authors": [
+      "John Williams"
+    ]
+  },
+  {
+    "album": "Piano Music",
+    "authors": [
+      "Toru Takemitsu"
+    ]
+  },
+  {
+    "album": "Splatoon ORIGINAL SOUNDTRACK —Splatune—",
+    "authors": [
+      "\\U30b7\\U30aa\\U30ab\\U30e9\\U30fc\\U30b9\\U3099"
+    ]
+  },
+  {
+    "album": "Willy Wonka & The Chocolate Factory: Music From the Original Soundtrack of the Paramount Picture",
+    "authors": []
+  },
+  {
+    "album": "Red Dragonfly",
+    "authors": [
+      "Shinobu Sato"
+    ]
+  },
+  {
+    "album": "TRON: Legacy",
+    "authors": [
+      "Daft Punk"
+    ]
+  },
+  {
+    "album": "Kingdom Hearts II",
+    "authors": []
+  },
+  {
+    "album": "Kingdom Hearts II",
+    "authors": []
+  },
+  {
+    "album": "The Blues Brothers",
+    "authors": []
+  },
+  {
+    "album": "Piano Music",
+    "authors": [
+      "Toru Takemitsu"
+    ]
+  },
+  {
+    "album": "Kirby's Dream Collection Special Edition Soundtrack",
+    "authors": [
+      "Kirby 64 The Crystal Shards"
+    ]
+  },
+  {
+    "album": "Red Dragonfly",
+    "authors": [
+      "Shinobu Sato"
+    ]
+  },
+  {
+    "album": "This Is the One",
+    "authors": [
+      "Utada Hikaru"
+    ]
+  },
+  {
+    "album": "Red Dragonfly",
+    "authors": [
+      "Shinobu Sato"
+    ]
+  },
+  {
+    "album": "Willy Wonka & The Chocolate Factory: Music From the Original Soundtrack of the Paramount Picture",
+    "authors": [
+      "Gene Wilder"
+    ]
+  },
+  {
+    "album": "String Quartets, op. 33 \"Russian\": No. 1 / No. 2 \"The Joke\" / No. 5 \"How do you do?\"",
+    "authors": [
+      "Koda\\U0301ly Quartet"
+    ]
+  },
+  {
+    "album": "Piano Music",
+    "authors": [
+      "Toru Takemitsu"
+    ]
+  },
+  {
+    "album": "Red Dragonfly",
+    "authors": [
+      "Shinobu Sato"
+    ]
+  },
+  {
+    "album": "Star Wars: The Force Awakens",
+    "authors": [
+      "John Williams"
+    ]
+  },
+  {
+    "album": "The Essential John Denver",
+    "authors": [
+      "John Denver"
+    ]
+  },
+  {
+    "album": "Red Dragonfly",
+    "authors": [
+      "Shinobu Sato"
+    ]
+  },
+  {
+    "album": "This Is the One",
+    "authors": [
+      "Utada Hikaru"
+    ]
+  },
+  {
+    "album": "This Is the One",
+    "authors": [
+      "Utada Hikaru"
+    ]
+  },
+  {
+    "album": "The Blues Brothers",
+    "authors": [
+      "Ray Charles, Blues Brothers"
+    ]
+  },
+  {
+    "album": "The Blues Brothers",
+    "authors": []
+  },
+  {
+    "album": "Red Dragonfly",
+    "authors": [
+      "Shinobu Sato"
+    ]
+  },
+  {
+    "album": "Red Dragonfly",
+    "authors": [
+      "Shinobu Sato"
+    ]
+  },
+  {
+    "album": "Red Dragonfly",
+    "authors": [
+      "Shinobu Sato"
+    ]
+  },
+  {
+    "album": "This Is the One",
+    "authors": [
+      "Utada Hikaru"
+    ]
+  },
+  {
+    "album": "Pet Sounds",
+    "authors": [
+      "The Beach Boys"
+    ]
+  },
+  {
+    "album": "Sing or Die",
+    "authors": [
+      "Dreams Come True"
+    ]
+  },
+  {
+    "album": "Kingdom Hearts II",
+    "authors": []
+  },
+  {
+    "album": "Splatoon ORIGINAL SOUNDTRACK —Splatune—",
+    "authors": [
+      "Squid Squad"
+    ]
+  },
+  {
+    "album": "Hush",
+    "authors": [
+      "Yo\\U2010Yo Ma"
+    ]
+  },
+  {
+    "album": "Cello Suites",
+    "authors": [
+      "Pierre Fournier"
+    ]
+  },
+  {
+    "album": "The Essential John Denver",
+    "authors": [
+      "John Denver"
+    ]
+  },
+  {
+    "album": "The Blues Brothers",
+    "authors": []
+  },
+  {
+    "album": "The Essential John Denver",
+    "authors": [
+      "John Denver"
+    ]
+  },
+  {
+    "album": "TRON: Legacy",
+    "authors": [
+      "Daft Punk"
+    ]
+  },
+  {
+    "album": "The Essential John Denver",
+    "authors": [
+      "John Denver"
+    ]
+  },
+  {
+    "album": "The Essential John Denver",
+    "authors": [
+      "John Denver"
+    ]
+  },
+  {
+    "album": "Kingdom Hearts II",
+    "authors": []
+  },
+  {
+    "album": "Willy Wonka & The Chocolate Factory: Music From the Original Soundtrack of the Paramount Picture",
+    "authors": [
+      "Aubrey Woods"
+    ]
+  },
+  {
+    "album": "TRON: Legacy",
+    "authors": [
+      "Daft Punk"
+    ]
+  },
+  {
+    "album": "The Blues Brothers",
+    "authors": [
+      "James Brown, Rev. James Cleveland Choir"
+    ]
+  },
+  {
+    "album": "Walt Disney's Fantasia",
+    "authors": [
+      "The Philadelphia Orchestra"
+    ]
+  },
+  {
+    "album": "Willy Wonka & The Chocolate Factory: Music From the Original Soundtrack of the Paramount Picture",
+    "authors": [
+      "Gene Wilder"
+    ]
+  },
+  {
+    "album": "Jurassic Park: Original Motion Picture Soundtrack",
+    "authors": [
+      "John Williams"
+    ]
+  },
+  {
+    "album": "The Blues Brothers",
+    "authors": []
+  },
+  {
+    "album": "The Blues Brothers",
+    "authors": [
+      "Blues Brothers, Aretha Franklin"
+    ]
+  },
+  {
+    "album": "Sing or Die",
+    "authors": [
+      "Dreams Come True"
+    ]
+  },
+  {
+    "album": "The Black Mages",
+    "authors": [
+      "The Black Mages"
+    ]
+  },
+  {
+    "album": "Red Dragonfly",
+    "authors": [
+      "Shinobu Sato"
+    ]
+  },
+  {
+    "album": "Brave",
+    "authors": [
+      "Julie Fowlis"
+    ]
+  },
+  {
+    "album": "KINGDOM HEARTS",
+    "authors": []
+  },
+  {
+    "album": "Kingdom Hearts II",
+    "authors": []
+  },
+  {
+    "album": "MMPR: THE ALBUM",
+    "authors": [
+      "Aaron Waters"
+    ]
+  },
+  {
+    "album": "Jurassic Park: Original Motion Picture Soundtrack",
+    "authors": [
+      "John Williams"
+    ]
+  },
+  {
+    "album": "The Very Best of Tower of Power: The Warner Years",
+    "authors": [
+      "Tower of Power"
+    ]
+  },
+  {
+    "album": "MMPR: THE ALBUM",
+    "authors": [
+      "Aaron Waters"
+    ]
+  },
+  {
+    "album": "Willy Wonka & The Chocolate Factory: Music From the Original Soundtrack of the Paramount Picture",
+    "authors": []
+  },
+  {
+    "album": "Edward MacDowell: Piano Music Vol 1",
+    "authors": [
+      "James Barbagallo"
+    ]
+  },
+  {
+    "album": "Pet Sounds",
+    "authors": [
+      "The Beach Boys"
+    ]
+  },
+  {
+    "album": "The Very Best of Tower of Power: The Warner Years",
+    "authors": [
+      "Tower of Power"
+    ]
+  },
+  {
+    "album": "MMPR: THE ALBUM",
+    "authors": [
+      "Aaron Waters"
+    ]
+  }
+]
