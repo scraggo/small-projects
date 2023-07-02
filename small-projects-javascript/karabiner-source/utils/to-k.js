@@ -1,6 +1,7 @@
-const fromTo = (fromObj,toObj) => ({ from: fromObj, to: toObj })
-const keyCode = (key) => ({ key_code: key})
-const mods = (modsArr) => ({ modifiers: modsArr})
+export const fromTo = (fromObj, toObj) => ({ from: fromObj, to: toObj });
+export const keyCode = (key) => ({ key_code: key });
+export const mods = (modsArr) => ({ modifiers: modsArr });
+export const fromToSameCode = (key) => fromTo(key, key);
 
 /**
  * returns object in this shape:
@@ -19,30 +20,20 @@ const mods = (modsArr) => ({ modifiers: modsArr})
  */
 export const shiftKeys = (arr) => {
   return arr.map((key) => {
-    const keyObj = keyCode(key)
-    return fromTo(keyObj, {...keyObj, ...mods(['left_shift'])})
+    const keyObj = keyCode(key);
+    return fromTo(keyObj, { ...keyObj, ...mods(['left_shift']) });
   });
 };
 
-export const fromToSameCode = (key) => fromTo(key, key)
-
-export const transformFunctionKeys = keyMap => {
+export const transformFunctionKeys = (keyMap) => {
   return keyMap.map((keyObj, idx) => {
-    const keyCode = `f${idx + 1}`
-    const mapped = fromToSameCode(keyCode)
-    // const mapped = {
-    //   from: {
-    //     key_code: `f${idx + 1}`
-    //   }
-    // }
-
-    // // copy by default
-    // mapped.to = {...mapped.from}
+    const keyCode = `f${idx + 1}`;
+    const mapped = fromToSameCode(keyCode);
 
     if (keyObj.key_code || keyObj.consumer_key_code) {
-      mapped.to = keyObj
+      mapped.to = keyObj;
     }
 
     return mapped;
-  })
-}
+  });
+};

@@ -1,0 +1,58 @@
+[
+  {
+    "from": {
+      "key_code": "0"
+    },
+    "to": {
+      "key_code": "0"
+    }
+  },
+  {
+    "from": {
+      "key_code": "j"
+    },
+    "to": {
+      "key_code": "1"
+    }
+  },
+  {
+    "from": {
+      "key_code": "k"
+    },
+    "to": {
+      "key_code": "2"
+    }
+  },
+  {
+    "from": {
+      "key_code": "l"
+    },
+    "to": {
+      "key_code": "3"
+    }
+  },
+  {
+    "from": {
+      "key_code": "u"
+    },
+    "to": {
+      "key_code": "4"
+    }
+  },
+  {
+    "from": {
+      "key_code": "i"
+    },
+    "to": {
+      "key_code": "5"
+    }
+  },
+  {
+    "from": {
+      "key_code": "o"
+    },
+    "to": {
+      "key_code": "6"
+    }
+  }
+]

@@ -1,31 +1,5 @@
-/**
- * returns object in this shape:
-{
-  "from": {
-      "key_code": "KEY"
-  },
-  "to": {
-      "key_code": "KEY",
-      "modifiers": [
-          "left_shift"
-      ]
-  }
-}
- * @param {string[]} arr
- */
-export const shiftKeys = (arr) => {
-  return arr.map((key) => {
-    return {
-      from: {
-        key_code: key,
-      },
-      to: {
-        key_code: key,
-        modifiers: ['left_shift'],
-      },
-    };
-  });
-};
+import { printJSON } from '../utils/io.js';
+import { shiftKeys } from '../utils/to-k.js';
 
 const keysToShift = [
   // row 1
@@ -56,11 +30,4 @@ const keysToShift = [
 ];
 
 const res = shiftKeys(keysToShift);
-
-const isScript = process.argv.find(arg => import.meta.url.endsWith(arg))
-// const isScript = process.argv.includes(import.meta.url.slice('file://'.length))
-
-if (isScript) {
-  // console.log('im a script')
-  console.log(JSON.stringify(res, null, 2));
-}
+printJSON(res);

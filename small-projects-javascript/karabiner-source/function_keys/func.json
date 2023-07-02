@@ -68,7 +68,7 @@
       "key_code": "f9"
     },
     "to": {
-      "consumer_key_code": "volume_increment"
+      "key_code": "f9"
     }
   },
   {

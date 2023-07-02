@@ -1,3 +1,6 @@
+import { printJSON } from '../utils/io.js';
+import { fromTo, keyCode } from '../utils/to-k.js';
+
 /**
  * returns object in this shape:
 {
@@ -12,14 +15,7 @@
  */
 const shiftKeys = (arr) => {
   return arr.map(([keyFrom, keyTo]) => {
-    return {
-      from: {
-        key_code: keyFrom,
-      },
-      to: {
-        key_code: keyTo,
-      },
-    };
+    return fromTo(keyCode(keyFrom), keyCode(keyTo));
   });
 };
 
@@ -32,4 +28,4 @@ const windowsToMacKeys = [
 
 const res = shiftKeys(windowsToMacKeys);
 
-console.log(JSON.stringify(res, null, 2));
+printJSON(res);

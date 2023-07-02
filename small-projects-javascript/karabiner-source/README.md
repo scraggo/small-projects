@@ -17,3 +17,7 @@ node source-file.js > source-file.json
 ```
 
 Add json to appropriate parts of `~/.config/karabiner/karabiner.json`
+
+OR what I've done is
+
+`ln [above source] [this repo]`

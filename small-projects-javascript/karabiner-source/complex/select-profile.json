@@ -1,21 +1,107 @@
-{
-  "description": "insert -> select profile: DEC1",
-  "manipulators": [
-    {
-      "from": {
-        "key_code": "insert",
-        "modifiers": {
-          "optional": [
-            "any"
-          ]
-        }
-      },
-      "to": [
-        {
-          "shell_command": "'/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli' --select-profile 'DEC1'"
-        }
-      ],
-      "type": "basic"
-    }
-  ]
-}
+[
+  {
+    "description": "f1 -> select profile: Layer",
+    "manipulators": [
+      {
+        "from": {
+          "key_code": "f1",
+          "modifiers": {
+            "optional": [
+              "any"
+            ]
+          }
+        },
+        "to": [
+          {
+            "shell_command": "'/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli' --select-profile 'Layer'"
+          }
+        ],
+        "type": "basic"
+      }
+    ]
+  },
+  {
+    "description": "f1 -> select profile: DEC1",
+    "manipulators": [
+      {
+        "from": {
+          "key_code": "f1",
+          "modifiers": {
+            "optional": [
+              "any"
+            ]
+          }
+        },
+        "to": [
+          {
+            "shell_command": "'/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli' --select-profile 'DEC1'"
+          }
+        ],
+        "type": "basic"
+      }
+    ]
+  },
+  {
+    "description": "f2 -> select profile: Shift",
+    "manipulators": [
+      {
+        "from": {
+          "key_code": "f2",
+          "modifiers": {
+            "optional": [
+              "any"
+            ]
+          }
+        },
+        "to": [
+          {
+            "shell_command": "'/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli' --select-profile 'Shift'"
+          }
+        ],
+        "type": "basic"
+      }
+    ]
+  },
+  {
+    "description": "f3 -> select profile: Mouse",
+    "manipulators": [
+      {
+        "from": {
+          "key_code": "f3",
+          "modifiers": {
+            "optional": [
+              "any"
+            ]
+          }
+        },
+        "to": [
+          {
+            "shell_command": "'/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli' --select-profile 'Mouse'"
+          }
+        ],
+        "type": "basic"
+      }
+    ]
+  },
+  {
+    "description": "f4 -> select profile: Number",
+    "manipulators": [
+      {
+        "from": {
+          "key_code": "f4",
+          "modifiers": {
+            "optional": [
+              "any"
+            ]
+          }
+        },
+        "to": [
+          {
+            "shell_command": "'/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli' --select-profile 'Number'"
+          }
+        ],
+        "type": "basic"
+      }
+    ]
+  }
+]

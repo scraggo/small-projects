@@ -1,3 +1,7 @@
+import { printJSON } from '../utils/io.js';
+
+const createDescription = (from, name) => `${from} -> select profile: ${name}`;
+
 // {
 //   "description": "insert -> select profile: DEC1",
 //   "manipulators": [
@@ -20,14 +24,16 @@
 //   ]
 // }
 
+const CLI =
+  '/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli';
+
 const createProfileSelector = ({
-  description,
   fromKey,
-  karabiner_cli,
+  karabiner_cli = CLI,
   profileName,
 }) => {
   return {
-    description,
+    description: createDescription(fromKey, profileName),
     manipulators: [
       {
         from: {
@@ -47,25 +53,30 @@ const createProfileSelector = ({
   };
 };
 
-const CLI =
-  '/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli';
-const FROM_KEY = 'insert';
-const PROFILE_NAME1 = 'DEC1';
+const mapped = [
+  // This profile goes into all the layers
+  {
+    fromKey: 'f1',
+    profileName: 'Layer',
+  },
 
-const profile1 = {
-  description: `${FROM_KEY} -> select profile: ${PROFILE_NAME1}`,
-  fromKey: FROM_KEY,
-  karabiner_cli: CLI,
-  profileName: PROFILE_NAME1,
-};
+  // The rest go into the layer selection profile
+  {
+    fromKey: 'f1',
+    profileName: 'DEC1',
+  },
+  {
+    fromKey: 'f2',
+    profileName: 'Shift',
+  },
+  {
+    fromKey: 'f3',
+    profileName: 'Mouse',
+  },
+  {
+    fromKey: 'f4',
+    profileName: 'Number',
+  },
+].map(createProfileSelector);
 
-// const PROFILE_NAME2 = 'Shift';
-// const profile2 = {
-//   description: `${FROM_KEY} -> select profile: ${PROFILE_NAME2}`,
-//   fromKey: FROM_KEY,
-//   karabiner_cli: CLI,
-//   profileName: PROFILE_NAME2,
-// };
-
-const res = JSON.stringify(createProfileSelector(profile1), null, 2);
-console.log(res);
+printJSON(mapped);
