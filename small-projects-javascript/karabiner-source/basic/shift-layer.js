@@ -13,7 +13,7 @@
 }
  * @param {string[]} arr
  */
-const shiftKeys = (arr) => {
+export const shiftKeys = (arr) => {
   return arr.map((key) => {
     return {
       from: {
@@ -57,4 +57,10 @@ const keysToShift = [
 
 const res = shiftKeys(keysToShift);
 
-console.log(JSON.stringify(res, null, 2));
+const isScript = process.argv.find(arg => import.meta.url.endsWith(arg))
+// const isScript = process.argv.includes(import.meta.url.slice('file://'.length))
+
+if (isScript) {
+  // console.log('im a script')
+  console.log(JSON.stringify(res, null, 2));
+}
