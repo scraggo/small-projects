@@ -4,7 +4,7 @@ import { fromTo, keyCode } from '../utils/to-k.js';
 
 const keysToNums = [
   // array index = number
-  '0',
+  'm',
   // 'm',
   // 'comma',
   // 'period',

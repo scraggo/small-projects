@@ -2,25 +2,21 @@
   "title": "DEC",
   "rules": [
     {
+      "description": "f1 -> select profile: Layer",
       "manipulators": [
         {
-          "description": "f1 -> select profile: Layer",
-          "manipulators": [
-            {
-              "from": {
-                "key_code": "f1",
-                "modifiers": {
-                  "optional": ["any"]
-                }
-              },
-              "to": [
-                {
-                  "shell_command": "'/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli' --select-profile 'Layer'"
-                }
-              ],
-              "type": "basic"
+          "from": {
+            "key_code": "f1",
+            "modifiers": {
+              "optional": ["any"]
             }
-          ]
+          },
+          "to": [
+            {
+              "shell_command": "'/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli' --select-profile 'Layer'"
+            }
+          ],
+          "type": "basic"
         }
       ]
     }
