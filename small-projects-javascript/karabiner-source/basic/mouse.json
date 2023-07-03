@@ -31,7 +31,7 @@
   },
   {
     "from": {
-      "key_code": "e"
+      "key_code": "w"
     },
     "to": {
       "mouse_key": {
@@ -41,7 +41,7 @@
   },
   {
     "from": {
-      "key_code": "d"
+      "key_code": "s"
     },
     "to": {
       "mouse_key": {
@@ -51,7 +51,7 @@
   },
   {
     "from": {
-      "key_code": "c"
+      "key_code": "x"
     },
     "to": {
       "mouse_key": {
@@ -61,7 +61,7 @@
   },
   {
     "from": {
-      "key_code": "w"
+      "key_code": "e"
     },
     "to": {
       "mouse_key": {
@@ -71,7 +71,7 @@
   },
   {
     "from": {
-      "key_code": "s"
+      "key_code": "d"
     },
     "to": {
       "mouse_key": {
@@ -81,7 +81,7 @@
   },
   {
     "from": {
-      "key_code": "x"
+      "key_code": "c"
     },
     "to": {
       "mouse_key": {

@@ -88,14 +88,14 @@ const DISTANCES = {
 };
 
 const UP = {
-  fast: createMouseMovement('w', 'y', -DISTANCES.long),
-  med: createMouseMovement('s', 'y', -DISTANCES.med),
-  slow: createMouseMovement('x', 'y', -DISTANCES.short),
+  fast: createMouseMovement('e', 'y', -DISTANCES.long),
+  med: createMouseMovement('d', 'y', -DISTANCES.med),
+  slow: createMouseMovement('c', 'y', -DISTANCES.short),
 };
 const DOWN = {
-  fast: createMouseMovement('e', 'y', DISTANCES.long),
-  med: createMouseMovement('d', 'y', DISTANCES.med),
-  slow: createMouseMovement('c', 'y', DISTANCES.short),
+  fast: createMouseMovement('w', 'y', DISTANCES.long),
+  med: createMouseMovement('s', 'y', DISTANCES.med),
+  slow: createMouseMovement('x', 'y', DISTANCES.short),
 };
 const LEFT = {
   fast: createMouseMovement('q', 'x', -DISTANCES.long),
