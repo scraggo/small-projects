@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+node basic/mouse.js > basic/mouse.json
 node basic/number-layer.js > basic/number-layer.json
 node basic/shift-layer.js > basic/shift-layer.json
 node basic/windows-modifiers.js > basic/windows-modifiers.json

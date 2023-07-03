@@ -1,0 +1,148 @@
+[
+  {
+    "from": {
+      "key_code": "q"
+    },
+    "to": {
+      "mouse_key": {
+        "x": -2000
+      }
+    }
+  },
+  {
+    "from": {
+      "key_code": "a"
+    },
+    "to": {
+      "mouse_key": {
+        "x": -1200
+      }
+    }
+  },
+  {
+    "from": {
+      "key_code": "z"
+    },
+    "to": {
+      "mouse_key": {
+        "x": -600
+      }
+    }
+  },
+  {
+    "from": {
+      "key_code": "e"
+    },
+    "to": {
+      "mouse_key": {
+        "y": 2000
+      }
+    }
+  },
+  {
+    "from": {
+      "key_code": "d"
+    },
+    "to": {
+      "mouse_key": {
+        "y": 1200
+      }
+    }
+  },
+  {
+    "from": {
+      "key_code": "c"
+    },
+    "to": {
+      "mouse_key": {
+        "y": 600
+      }
+    }
+  },
+  {
+    "from": {
+      "key_code": "w"
+    },
+    "to": {
+      "mouse_key": {
+        "y": -2000
+      }
+    }
+  },
+  {
+    "from": {
+      "key_code": "s"
+    },
+    "to": {
+      "mouse_key": {
+        "y": -1200
+      }
+    }
+  },
+  {
+    "from": {
+      "key_code": "x"
+    },
+    "to": {
+      "mouse_key": {
+        "y": -600
+      }
+    }
+  },
+  {
+    "from": {
+      "key_code": "r"
+    },
+    "to": {
+      "mouse_key": {
+        "x": 2000
+      }
+    }
+  },
+  {
+    "from": {
+      "key_code": "f"
+    },
+    "to": {
+      "mouse_key": {
+        "x": 1200
+      }
+    }
+  },
+  {
+    "from": {
+      "key_code": "v"
+    },
+    "to": {
+      "mouse_key": {
+        "x": 600
+      }
+    }
+  },
+  {
+    "from": {
+      "key_code": "j"
+    },
+    "to": {
+      "pointing_button": "button2"
+    }
+  },
+  {
+    "from": {
+      "key_code": "k"
+    },
+    "to": {
+      "pointing_button": "button1"
+    }
+  },
+  {
+    "from": {
+      "key_code": "semicolon"
+    },
+    "to": {
+      "mouse_key": {
+        "speed_multiplier": 0.5
+      }
+    }
+  }
+]
