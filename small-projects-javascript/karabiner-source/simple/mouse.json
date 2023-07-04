@@ -1,87 +1,7 @@
 [
   {
     "from": {
-      "key_code": "q"
-    },
-    "to": {
-      "mouse_key": {
-        "x": -2000
-      }
-    }
-  },
-  {
-    "from": {
-      "key_code": "a"
-    },
-    "to": {
-      "mouse_key": {
-        "x": -1200
-      }
-    }
-  },
-  {
-    "from": {
-      "key_code": "z"
-    },
-    "to": {
-      "mouse_key": {
-        "x": -600
-      }
-    }
-  },
-  {
-    "from": {
-      "key_code": "w"
-    },
-    "to": {
-      "mouse_key": {
-        "y": 2000
-      }
-    }
-  },
-  {
-    "from": {
-      "key_code": "s"
-    },
-    "to": {
-      "mouse_key": {
-        "y": 1200
-      }
-    }
-  },
-  {
-    "from": {
-      "key_code": "x"
-    },
-    "to": {
-      "mouse_key": {
-        "y": 600
-      }
-    }
-  },
-  {
-    "from": {
-      "key_code": "e"
-    },
-    "to": {
-      "mouse_key": {
-        "y": -2000
-      }
-    }
-  },
-  {
-    "from": {
-      "key_code": "d"
-    },
-    "to": {
-      "mouse_key": {
-        "y": -1200
-      }
-    }
-  },
-  {
-    "from": {
-      "key_code": "c"
+      "key_code": "i"
     },
     "to": {
       "mouse_key": {
@@ -91,27 +11,71 @@
   },
   {
     "from": {
-      "key_code": "r"
+      "key_code": "u"
     },
     "to": {
       "mouse_key": {
-        "x": 2000
+        "x": -600,
+        "y": -600
       }
     }
   },
   {
     "from": {
-      "key_code": "f"
+      "key_code": "o"
     },
     "to": {
       "mouse_key": {
-        "x": 1200
+        "x": 600,
+        "y": -600
       }
     }
   },
   {
     "from": {
-      "key_code": "v"
+      "key_code": "comma"
+    },
+    "to": {
+      "mouse_key": {
+        "y": 600
+      }
+    }
+  },
+  {
+    "from": {
+      "key_code": "m"
+    },
+    "to": {
+      "mouse_key": {
+        "x": -600,
+        "y": 600
+      }
+    }
+  },
+  {
+    "from": {
+      "key_code": "period"
+    },
+    "to": {
+      "mouse_key": {
+        "x": 600,
+        "y": 600
+      }
+    }
+  },
+  {
+    "from": {
+      "key_code": "j"
+    },
+    "to": {
+      "mouse_key": {
+        "x": -600
+      }
+    }
+  },
+  {
+    "from": {
+      "key_code": "l"
     },
     "to": {
       "mouse_key": {
@@ -121,7 +85,7 @@
   },
   {
     "from": {
-      "key_code": "j"
+      "key_code": "k"
     },
     "to": {
       "pointing_button": "button2"
@@ -129,7 +93,12 @@
   },
   {
     "from": {
-      "key_code": "k"
+      "key_code": "k",
+      "modifiers": {
+        "mandatory": [
+          "left_shift"
+        ]
+      }
     },
     "to": {
       "pointing_button": "button1"
@@ -137,11 +106,11 @@
   },
   {
     "from": {
-      "key_code": "semicolon"
+      "key_code": "left_shift"
     },
     "to": {
       "mouse_key": {
-        "speed_multiplier": 0.5
+        "speed_multiplier": 3.5
       }
     }
   }
