@@ -1,0 +1,34 @@
+[
+  {
+    "from": {
+      "key_code": "j"
+    },
+    "to": {
+      "key_code": "left_arrow"
+    }
+  },
+  {
+    "from": {
+      "key_code": "k"
+    },
+    "to": {
+      "key_code": "down_arrow"
+    }
+  },
+  {
+    "from": {
+      "key_code": "l"
+    },
+    "to": {
+      "key_code": "right_arrow"
+    }
+  },
+  {
+    "from": {
+      "key_code": "i"
+    },
+    "to": {
+      "key_code": "up_arrow"
+    }
+  }
+]
