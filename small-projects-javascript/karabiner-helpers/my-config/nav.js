@@ -1,19 +1,27 @@
-import { printJSON } from '../utils/io.js';
-import { fromTo, keyCode, fromWithModifiers } from '../utils/mods-shared.js';
+// import { printJSON } from '../utils/io.js';
+import {
+  fromTo,
+  keyNameToKeyObject,
+  fromWithModifiers,
+} from '../utils/mods-shared.js';
 
 const res = [
-  fromTo(keyCode('j'), keyCode('left_arrow')),
-  fromTo(keyCode('k'), keyCode('down_arrow')),
-  fromTo(keyCode('l'), keyCode('right_arrow')),
-  fromTo(keyCode('i'), keyCode('up_arrow')),
+  fromTo(keyNameToKeyObject('j'), keyNameToKeyObject('left_arrow')),
+  fromTo(keyNameToKeyObject('k'), keyNameToKeyObject('down_arrow')),
+  fromTo(keyNameToKeyObject('l'), keyNameToKeyObject('right_arrow')),
+  fromTo(keyNameToKeyObject('i'), keyNameToKeyObject('up_arrow')),
 
   // pageUp
-  fromTo(fromWithModifiers(keyCode('i'), ['left_control']), keyCode('page_up')),
+  fromTo(
+    fromWithModifiers(keyNameToKeyObject('i'), ['left_control']),
+    keyNameToKeyObject('page_up')
+  ),
   // pageDown
   fromTo(
-    fromWithModifiers(keyCode('k'), ['left_control']),
-    keyCode('page_down')
+    fromWithModifiers(keyNameToKeyObject('k'), ['left_control']),
+    keyNameToKeyObject('page_down')
   ),
 ];
 
-printJSON(res);
+export default res;
+// printJSON(res);

@@ -96,7 +96,7 @@
       "key_code": "k",
       "modifiers": {
         "mandatory": [
-          "left_shift"
+          "left_control"
         ]
       }
     },
@@ -111,6 +111,16 @@
     "to": {
       "mouse_key": {
         "speed_multiplier": 3.5
+      }
+    }
+  },
+  {
+    "from": {
+      "key_code": "left_option"
+    },
+    "to": {
+      "mouse_key": {
+        "speed_multiplier": 0.5
       }
     }
   }

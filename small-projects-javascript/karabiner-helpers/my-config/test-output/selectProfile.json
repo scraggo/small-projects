@@ -4,12 +4,7 @@
     "manipulators": [
       {
         "from": {
-          "key_code": "f1",
-          "modifiers": {
-            "optional": [
-              "any"
-            ]
-          }
+          "key_code": "f1"
         },
         "to": [
           {
@@ -25,12 +20,7 @@
     "manipulators": [
       {
         "from": {
-          "key_code": "f1",
-          "modifiers": {
-            "optional": [
-              "any"
-            ]
-          }
+          "key_code": "f1"
         },
         "to": [
           {
@@ -46,12 +36,7 @@
     "manipulators": [
       {
         "from": {
-          "key_code": "f2",
-          "modifiers": {
-            "optional": [
-              "any"
-            ]
-          }
+          "key_code": "f2"
         },
         "to": [
           {
@@ -67,12 +52,7 @@
     "manipulators": [
       {
         "from": {
-          "key_code": "f3",
-          "modifiers": {
-            "optional": [
-              "any"
-            ]
-          }
+          "key_code": "f3"
         },
         "to": [
           {
@@ -88,12 +68,7 @@
     "manipulators": [
       {
         "from": {
-          "key_code": "f4",
-          "modifiers": {
-            "optional": [
-              "any"
-            ]
-          }
+          "key_code": "f4"
         },
         "to": [
           {

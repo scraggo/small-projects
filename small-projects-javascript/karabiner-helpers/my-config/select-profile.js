@@ -1,4 +1,6 @@
 import { printJSON } from '../utils/io.js';
+import { createComplexRule } from '../utils/mods-complex.js';
+import { keyNameToKeyObject } from '../utils/mods-shared.js';
 
 const createDescription = (from, name) => `${from} -> select profile: ${name}`;
 
@@ -32,25 +34,19 @@ const createProfileSelector = ({
   karabiner_cli = CLI,
   profileName,
 }) => {
-  return {
-    description: createDescription(fromKey, profileName),
-    manipulators: [
+  const manipulator = {
+    from: keyNameToKeyObject(fromKey),
+    to: [
       {
-        from: {
-          key_code: fromKey,
-          modifiers: {
-            optional: ['any'],
-          },
-        },
-        to: [
-          {
-            shell_command: `'${karabiner_cli}' --select-profile '${profileName}'`,
-          },
-        ],
-        type: 'basic',
+        shell_command: `'${karabiner_cli}' --select-profile '${profileName}'`,
       },
     ],
+    type: 'basic',
   };
+
+  return createComplexRule(createDescription(fromKey, profileName), [
+    manipulator,
+  ]);
 };
 
 const mapped = [
@@ -79,4 +75,5 @@ const mapped = [
   },
 ].map(createProfileSelector);
 
-printJSON(mapped);
+// printJSON(mapped);
+export default mapped;

@@ -136,11 +136,15 @@ export class Writer {
     );
   }
 
-  writeToFile(filepath, filename) {
-    const fullpath = path.join(filepath, filename);
-    console.log('writing config to', fullpath);
-    writeFileSync(fullpath, JSON.stringify(this.config), {
+  writeToFile(fullFilepath) {
+    console.log('writing config to', fullFilepath);
+    writeFileSync(fullFilepath, JSON.stringify(this.config), {
       encoding: 'utf-8',
     });
+    console.log('success');
+  }
+
+  overwriteRootConfig() {
+    this.writeToFile(ROOT_PATH);
   }
 }

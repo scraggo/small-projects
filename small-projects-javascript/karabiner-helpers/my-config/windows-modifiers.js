@@ -1,5 +1,5 @@
-import { printJSON } from '../utils/io.js';
-import { fromTo, keyCode } from '../utils/mods-shared.js';
+// import { printJSON } from '../utils/io.js';
+import { fromTo, keyNameToKeyObject } from '../utils/mods-shared.js';
 
 /**
  * returns object in this shape:
@@ -15,7 +15,7 @@ import { fromTo, keyCode } from '../utils/mods-shared.js';
  */
 const simpleKeyAssignment = (arr) => {
   return arr.map(([keyFrom, keyTo]) => {
-    return fromTo(keyCode(keyFrom), keyCode(keyTo));
+    return fromTo(keyNameToKeyObject(keyFrom), keyNameToKeyObject(keyTo));
   });
 };
 
@@ -28,4 +28,5 @@ const windowsToMacKeys = [
 
 const res = simpleKeyAssignment(windowsToMacKeys);
 
-printJSON(res);
+// printJSON(res);
+export default res;

@@ -1,5 +1,4 @@
-import { printJSON } from '../utils/io.js';
-import { fromTo, keyCode } from '../utils/mods-shared.js';
+import { fromTo, keyNameToKeyObject } from '../utils/mods-shared.js';
 
 // "simple_modifications": [
 //   {
@@ -83,7 +82,38 @@ const createMouseMovement = (fromKey, x, y) => {
     to.mouse_key.y = y;
   }
 
-  return fromTo(keyCode(fromKey), to);
+  return fromTo(keyNameToKeyObject(fromKey), to);
+};
+
+// {
+//   "from": {
+//       "key_code": "h"
+//   },
+//   "to": {
+//       "mouse_key": {
+//           "horizontal_wheel": 32
+//       }
+//   }
+// },
+const createScroll = (fromKey, x, y) => {
+  const to = {
+    mouse_key: {},
+  };
+
+  /*
+  x > 0 goes LEFT
+  x < 0 goes RIGHT
+  y > 0 goes DOWN
+  y < 0 goes UP
+  */
+  if (typeof x === 'number') {
+    to.mouse_key.horizontal_wheel = x;
+  }
+  if (typeof y === 'number') {
+    to.mouse_key.vertical_wheel = y;
+  }
+
+  return fromTo(keyNameToKeyObject(fromKey), to);
 };
 
 const DISTANCES = {
@@ -133,7 +163,7 @@ const RIGHT = {
   slow: createMouseMovement('l', DISTANCES.short),
 };
 
-const res = [
+export default [
   UP.slow,
   UP_LEFT.slow,
   UP_RIGHT.slow,
@@ -142,7 +172,7 @@ const res = [
   DOWN_RIGHT.slow,
   LEFT.slow,
   RIGHT.slow,
-  fromTo(keyCode('k'), {
+  fromTo(keyNameToKeyObject('k'), {
     // this is the main button, it's switched in my mac settings
     pointing_button: 'button2',
   }),
@@ -157,16 +187,18 @@ const res = [
       pointing_button: 'button1',
     }
   ),
-  fromTo(keyCode('left_control'), {
+  fromTo(keyNameToKeyObject('left_shift'), {
     mouse_key: {
       speed_multiplier: 3.5,
     },
   }),
-  fromTo(keyCode('left_option'), {
+  fromTo(keyNameToKeyObject('left_option'), {
     mouse_key: {
       speed_multiplier: 0.5,
     },
   }),
+  createScroll('h', 32), // left
+  createScroll('semicolon', -32), // right
 ].flat();
 
-printJSON(res);
+// printJSON(res);

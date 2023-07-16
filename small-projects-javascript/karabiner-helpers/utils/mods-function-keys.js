@@ -1,14 +1,20 @@
-import { fromToSameCode } from './mods-shared';
+import { fromToSameCode, keyNameToKeyObject } from './mods-shared.js';
 
 /**
- * @param {any[]} keyMap - Array<KeyObject | ConsumerKeyObject>
+ * @typedef { import("./types").KeyObject } KeyObject
+ * @typedef { import("./types").ConsumerKeyObject } ConsumerKeyObject
+ */
+
+/**
+ * 0th array index maps to f1, 1st index maps to f2, etc
+ * @param {({} | KeyObject | ConsumerKeyObject)[]} keyMap
  */
 export const transformFunctionKeys = (keyMap) => {
   return keyMap.map((keyObj, idx) => {
-    const keyCode = `f${idx + 1}`;
-    const mapped = fromToSameCode(keyCode);
+    const funcKeyCode = `f${idx + 1}`;
+    const mapped = fromToSameCode(keyNameToKeyObject(funcKeyCode));
 
-    if (keyObj.key_code || keyObj.consumer_key_code) {
+    if ('key_code' in keyObj || 'consumer_key_code' in keyObj) {
       mapped.to = keyObj;
     }
 

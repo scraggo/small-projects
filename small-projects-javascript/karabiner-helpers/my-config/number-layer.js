@@ -1,6 +1,5 @@
-// import { shiftKeys } from "./shift-layer";
-import { printJSON } from '../utils/io.js';
-import { fromTo, keyCode } from '../utils/mods-shared.js';
+// import { printJSON } from '../utils/io.js';
+import { fromTo, keyNameToKeyObject } from '../utils/mods-shared.js';
 
 const keysToNums = [
   // array index = number
@@ -18,7 +17,8 @@ const keysToNums = [
 ];
 
 const res = keysToNums.map((fromKey, idx) =>
-  fromTo(keyCode(fromKey), keyCode(String(idx)))
+  fromTo(keyNameToKeyObject(fromKey), keyNameToKeyObject(String(idx)))
 );
 
-printJSON(res);
+// printJSON(res);
+export default res;

@@ -7,9 +7,14 @@
  * @param {string} key
  * @returns {KeyObject}
  */
-export const keyCode = (key) => ({ key_code: key });
+export const keyNameToKeyObject = (key) => ({ key_code: key });
+
+/**
+ * @param {*} fromObj
+ * @param {*} toObj
+ */
 export const fromTo = (fromObj, toObj) => ({ from: fromObj, to: toObj });
-export const fromToSameCode = (key) => fromTo(key, key);
+export const fromToSameCode = (keyObj) => fromTo(keyObj, keyObj);
 
 /**
  * @param {KeyObject} keyObj
@@ -17,15 +22,18 @@ export const fromToSameCode = (key) => fromTo(key, key);
  * @param {string[]} [optional]
  */
 export const fromWithModifiers = (keyObj, mandatory, optional) => {
-  keyObj.modifiers = {};
+  const returnObj = {
+    ...keyObj,
+    modifiers: {},
+  };
 
   if (mandatory) {
-    keyObj.modifiers.mandatory = mandatory;
+    returnObj.modifiers.mandatory = mandatory;
   }
   if (optional) {
-    keyObj.modifiers.optional = mandatory;
+    returnObj.modifiers.optional = optional;
   }
-  return keyObj;
+  return returnObj;
 };
 
 /**
@@ -33,8 +41,10 @@ export const fromWithModifiers = (keyObj, mandatory, optional) => {
  * @param {string[]} modifiers
  */
 export const toWithModifiers = (keyObj, modifiers) => {
-  keyObj.modifiers = modifiers;
-  return keyObj;
+  return {
+    ...keyObj,
+    modifiers,
+  };
 };
 
 /**
@@ -54,7 +64,8 @@ export const toWithModifiers = (keyObj, modifiers) => {
  */
 export const shiftKeys = (arr) => {
   return arr.map((key) => {
-    const keyObj = keyCode(key);
-    return fromTo(keyObj, toWithModifiers(keyObj, ['left_shift']));
+    const keyObj = keyNameToKeyObject(key);
+    const keyObjClone = keyNameToKeyObject(key);
+    return fromTo(keyObj, toWithModifiers(keyObjClone, ['left_shift']));
   });
 };

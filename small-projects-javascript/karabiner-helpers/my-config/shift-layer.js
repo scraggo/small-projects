@@ -1,4 +1,4 @@
-import { printJSON } from '../utils/io.js';
+// import { printJSON } from '../utils/io.js';
 import { shiftKeys } from '../utils/mods-shared.js';
 
 const keysToShift = [
@@ -30,4 +30,5 @@ const keysToShift = [
 ];
 
 const res = shiftKeys(keysToShift);
-printJSON(res);
+// printJSON(res);
+export default res;

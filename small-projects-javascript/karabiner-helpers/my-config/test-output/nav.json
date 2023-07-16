@@ -30,5 +30,31 @@
     "to": {
       "key_code": "up_arrow"
     }
+  },
+  {
+    "from": {
+      "key_code": "i",
+      "modifiers": {
+        "mandatory": [
+          "left_control"
+        ]
+      }
+    },
+    "to": {
+      "key_code": "page_up"
+    }
+  },
+  {
+    "from": {
+      "key_code": "k",
+      "modifiers": {
+        "mandatory": [
+          "left_control"
+        ]
+      }
+    },
+    "to": {
+      "key_code": "page_down"
+    }
   }
 ]
