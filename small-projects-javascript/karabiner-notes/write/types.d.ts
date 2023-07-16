@@ -15,8 +15,15 @@ export interface KarabinerProfileDevice extends KarabinerModsBase {
   };
 }
 
+export interface KarabinerComplexRule {
+  description: string;
+  manipulators: any[]; // { from, to, type }
+}
+
 export interface KarabinerProfile extends KarabinerModsBase {
   name: string;
-  complex_modifications: any;
+  complex_modifications: {
+    rules: KarabinerComplexRule[];
+  };
   devices: KarabinerProfileDevice[];
 }

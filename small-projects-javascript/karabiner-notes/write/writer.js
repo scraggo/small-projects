@@ -1,4 +1,4 @@
-import { readFileSync } from 'fs';
+import { readFileSync, writeFileSync } from 'fs';
 import { homedir } from 'os';
 import path from 'path';
 
@@ -121,6 +121,13 @@ class Writer {
 
     return funcKeysPrev;
   }
+
+  writeToFile(filepath, filename) {
+    console.log(filepath, filename);
+    writeFileSync(path.join(filepath, filename), JSON.stringify(this.config), {
+      encoding: 'utf-8',
+    });
+  }
 }
 
 const writer = new Writer();
@@ -157,3 +164,5 @@ console.log(
     ]
   )
 );
+
+writer.writeToFile(path.resolve('.'), 'z.json');
