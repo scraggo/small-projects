@@ -1,7 +1,31 @@
 export const fromTo = (fromObj, toObj) => ({ from: fromObj, to: toObj });
 export const keyCode = (key) => ({ key_code: key });
-export const mods = (modsArr) => ({ modifiers: modsArr });
 export const fromToSameCode = (key) => fromTo(key, key);
+
+/**
+ * @param {string[]} modsArr
+ * @param {'mandatory'|'optional'} [type]
+ */
+export const mods = (modsArr, type) => {
+  if (type) {
+    return {
+      modifiers: {
+        [type]: modsArr,
+      },
+    };
+  }
+
+  return {
+    modifiers: modsArr,
+  };
+};
+
+export const withMandatoryModifiers = (keyObj, modsArr) => {
+  return {
+    ...keyObj,
+    ...mods(modsArr, 'mandatory'),
+  };
+};
 
 /**
  * returns object in this shape:

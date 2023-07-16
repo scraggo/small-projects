@@ -1,8 +1,7 @@
 {
-  "name": "karabiner-source",
+  "name": "karabiner-notes",
   "version": "1.0.0",
   "description": "",
-  "main": "shift-layer.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

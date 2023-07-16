@@ -147,22 +147,28 @@ const res = [
   LEFT.slow,
   RIGHT.slow,
   fromTo(keyCode('k'), {
+    // this is the main button, it's switched in my mac settings
     pointing_button: 'button2',
   }),
   fromTo(
     {
       key_code: 'k',
       modifiers: {
-        mandatory: ['left_shift'],
+        mandatory: ['left_control'],
       },
     },
     {
       pointing_button: 'button1',
     }
   ),
-  fromTo(keyCode('left_shift'), {
+  fromTo(keyCode('left_control'), {
     mouse_key: {
       speed_multiplier: 3.5,
+    },
+  }),
+  fromTo(keyCode('left_option'), {
+    mouse_key: {
+      speed_multiplier: 0.5,
     },
   }),
 ].flat();
