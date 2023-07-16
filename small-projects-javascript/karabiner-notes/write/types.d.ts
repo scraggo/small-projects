@@ -1,8 +1,3 @@
-export interface KarabinerConfig {
-  global: any;
-  profiles: any[];
-}
-
 export interface KarabinerModsBase {
   fn_function_keys: any[];
   simple_modifications: any[];
@@ -26,4 +21,9 @@ export interface KarabinerProfile extends KarabinerModsBase {
     rules: KarabinerComplexRule[];
   };
   devices: KarabinerProfileDevice[];
+}
+
+export interface KarabinerConfig {
+  global: any;
+  profiles: KarabinerProfile[];
 }

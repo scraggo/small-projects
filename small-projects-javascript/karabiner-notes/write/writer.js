@@ -16,9 +16,9 @@ const ROOT_PATH = path.join(
   'karabiner.json'
 );
 
-const DEVICES = {
-  appleSmall: { product_id: 541, vendor_id: 1452 },
-};
+const KEY_MOD_FN = 'fn_function_keys';
+const KEY_MOD_COMPLEX = 'complex_modifications';
+const KEY_MOD_SIMPLE = 'simple_modifications';
 
 const selectorsTop = {
   /**
@@ -39,15 +39,15 @@ const selectorsProfile = {
   /**
    * @param {KarabinerProfile} profile
    */
-  modComplex: (profile) => profile.complex_modifications,
+  modComplex: (profile) => profile[KEY_MOD_COMPLEX],
   /**
-   * @param {KarabinerModsBase} profile
+   * @param {KarabinerProfile|KarabinerProfileDevice} profile
    */
-  modFunctionKeys: (profile) => profile.fn_function_keys,
+  modFunctionKeys: (profile) => profile[KEY_MOD_FN],
   /**
-   * @param {KarabinerModsBase} profile
+   * @param {KarabinerProfile|KarabinerProfileDevice} profile
    */
-  modSimple: (profile) => profile.simple_modifications,
+  modSimple: (profile) => profile[KEY_MOD_SIMPLE],
   /**
    * @param {KarabinerProfile} profile
    */
@@ -74,9 +74,10 @@ const selectorsProfileDevice = {
   modSimple: (profileDevice) => selectorsProfile.modSimple(profileDevice),
 };
 
-class Writer {
+export class Writer {
   constructor(karabinerPath = ROOT_PATH) {
     const file = readFileSync(karabinerPath, { encoding: 'utf-8' });
+    /** @type {KarabinerConfig} */
     this.config = JSON.parse(file);
   }
 
@@ -105,64 +106,41 @@ class Writer {
     });
   }
 
-  writeFunctionKeys({ profileName, deviceProps }, funcKeys) {
-    const funcKeysPrev = deviceProps
-      ? selectorsProfileDevice.modFunctionKeys(
-          this.findDeviceProfileByNameAndDeviceInfo(profileName, deviceProps)
-        )
-      : selectorsProfile.modFunctionKeys(this.findProfileByName(profileName));
+  modifyProfile({ profileName, deviceProps = null }, keyType, keysToWrite) {
+    const profile = deviceProps
+      ? this.findDeviceProfileByNameAndDeviceInfo(profileName, deviceProps)
+      : this.findProfileByName(profileName);
 
-    // mutate funcKeysPrev
-    // todo: get a path so I can do:
-    // this.config[path] = funcKeys
-    funcKeys.forEach((key, idx) => {
-      funcKeysPrev[idx] = key;
-    });
+    profile[keyType] = keysToWrite;
 
-    return funcKeysPrev;
+    return true;
+  }
+
+  makeFunctionMods({ profileName, deviceProps }, funcKeys) {
+    return this.modifyProfile(
+      { profileName, deviceProps },
+      KEY_MOD_FN,
+      funcKeys
+    );
+  }
+
+  makeComplexMods({ profileName }, complexKeys) {
+    return this.modifyProfile({ profileName }, KEY_MOD_COMPLEX, complexKeys);
+  }
+
+  makeSimpleMods({ profileName, deviceProps }, simpleKeys) {
+    return this.modifyProfile(
+      { profileName, deviceProps },
+      KEY_MOD_SIMPLE,
+      simpleKeys
+    );
   }
 
   writeToFile(filepath, filename) {
-    console.log(filepath, filename);
-    writeFileSync(path.join(filepath, filename), JSON.stringify(this.config), {
+    const fullpath = path.join(filepath, filename);
+    console.log('writing config to', fullpath);
+    writeFileSync(fullpath, JSON.stringify(this.config), {
       encoding: 'utf-8',
     });
   }
 }
-
-const writer = new Writer();
-console.log(writer.findProfileByName('Mouse').name);
-console.log(
-  writer.findDeviceProfileByNameAndDeviceInfo('Mouse', DEVICES.appleSmall)
-    .identifiers
-);
-console.log(
-  writer.writeFunctionKeys(
-    {
-      profileName: 'Mouse',
-      deviceProps: DEVICES.appleSmall,
-    },
-    [
-      { from: { key_code: 'f1' }, to: { key_code: 'f1' } },
-      { from: { key_code: 'f2' }, to: { key_code: 'f2' } },
-      { from: { key_code: 'f3' }, to: { key_code: 'mission_control' } },
-      { from: { key_code: 'f4' }, to: { key_code: 'mission_control' } },
-      { from: { key_code: 'f5' }, to: { key_code: 'f5' } },
-      { from: { key_code: 'f6' }, to: { key_code: 'f6' } },
-      { from: { key_code: 'f7' }, to: { key_code: 'f7' } },
-      { from: { key_code: 'f8' }, to: { key_code: 'f8' } },
-      { from: { key_code: 'f9' }, to: { key_code: 'f9' } },
-      { from: { key_code: 'f10' }, to: { consumer_key_code: 'mute' } },
-      {
-        from: { key_code: 'f11' },
-        to: { consumer_key_code: 'volume_decrement' },
-      },
-      {
-        from: { key_code: 'f12' },
-        to: { consumer_key_code: 'volume_increment' },
-      },
-    ]
-  )
-);
-
-writer.writeToFile(path.resolve('.'), 'z.json');
