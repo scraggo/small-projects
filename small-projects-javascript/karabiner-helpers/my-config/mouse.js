@@ -134,10 +134,6 @@ const RIGHT = {
 };
 
 const res = [
-  // Object.values(LEFT),
-  // Object.values(DOWN),
-  // Object.values(UP),
-  // Object.values(RIGHT),
   UP.slow,
   UP_LEFT.slow,
   UP_RIGHT.slow,

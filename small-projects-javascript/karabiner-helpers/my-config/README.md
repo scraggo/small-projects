@@ -1,6 +1,9 @@
-## recommended usage
+## Function Keys
+
+### recommended usage
 
 Mac:
+
 - System preferences > Keyboard > `Use F1, F2, etc as standard function keys`
 - Optional: Shortcuts
   - Mission Control:
@@ -12,7 +15,7 @@ Mac:
 
 Karabiner: leave `Use F1, F2, etc as standard function keys` unchecked
 
-## paths
+### paths
 
 All devices
 
@@ -26,7 +29,7 @@ Specific device
 profiles[] > {} > devices[] > {} > fn_function_keys{}
 ```
 
-## shape
+### shape
 
 ```
 [
@@ -63,3 +66,17 @@ Useful:
 ```
 
 Not all Mac functions are available in karabiner.
+
+## Complex
+
+### paths
+
+All devices
+
+```
+profiles[] > {} > complex_modifications{} > rules[]
+```
+
+### recommended
+
+Add `select profile 'Layer'` to `~/.config/karabiner/assets/complex_modifications/my-rules.json`

@@ -1,5 +1,5 @@
 import path from 'path';
-import { Writer } from './writer';
+import { Writer } from '../write/writer';
 
 const DEVICES = {
   appleSmall: { product_id: 541, vendor_id: 1452 },

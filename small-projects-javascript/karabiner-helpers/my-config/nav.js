@@ -1,5 +1,5 @@
 import { printJSON } from '../utils/io.js';
-import { fromTo, keyCode, withMandatoryModifiers } from '../utils/to-k.js';
+import { fromTo, keyCode, fromWithModifiers } from '../utils/to-k.js';
 
 const res = [
   fromTo(keyCode('j'), keyCode('left_arrow')),
@@ -8,13 +8,10 @@ const res = [
   fromTo(keyCode('i'), keyCode('up_arrow')),
 
   // pageUp
-  fromTo(
-    withMandatoryModifiers(keyCode('i'), ['left_control']),
-    keyCode('page_up')
-  ),
+  fromTo(fromWithModifiers(keyCode('i'), ['left_control']), keyCode('page_up')),
   // pageDown
   fromTo(
-    withMandatoryModifiers(keyCode('k'), ['left_control']),
+    fromWithModifiers(keyCode('k'), ['left_control']),
     keyCode('page_down')
   ),
 ];

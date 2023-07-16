@@ -13,7 +13,7 @@ import { fromTo, keyCode } from '../utils/to-k.js';
 }
  * @param {string[][]} arr
  */
-const shiftKeys = (arr) => {
+const simpleKeyAssignment = (arr) => {
   return arr.map(([keyFrom, keyTo]) => {
     return fromTo(keyCode(keyFrom), keyCode(keyTo));
   });
@@ -26,6 +26,6 @@ const windowsToMacKeys = [
   // ['right_command', 'right_option'],
 ];
 
-const res = shiftKeys(windowsToMacKeys);
+const res = simpleKeyAssignment(windowsToMacKeys);
 
 printJSON(res);

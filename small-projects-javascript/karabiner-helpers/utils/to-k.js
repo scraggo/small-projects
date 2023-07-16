@@ -1,30 +1,40 @@
-export const fromTo = (fromObj, toObj) => ({ from: fromObj, to: toObj });
+/**
+ * @typedef { import("./types").KeyObject } KeyObject
+ * @typedef { import("./types").ConsumerKeyObject } ConsumerKeyObject
+ */
+
+/**
+ * @param {string} key
+ * @returns {KeyObject}
+ */
 export const keyCode = (key) => ({ key_code: key });
+export const fromTo = (fromObj, toObj) => ({ from: fromObj, to: toObj });
 export const fromToSameCode = (key) => fromTo(key, key);
 
 /**
- * @param {string[]} modsArr
- * @param {'mandatory'|'optional'} [type]
+ * @param {KeyObject} keyObj
+ * @param {string[]} [mandatory]
+ * @param {string[]} [optional]
  */
-export const mods = (modsArr, type) => {
-  if (type) {
-    return {
-      modifiers: {
-        [type]: modsArr,
-      },
-    };
-  }
+export const fromWithModifiers = (keyObj, mandatory, optional) => {
+  keyObj.modifiers = {};
 
-  return {
-    modifiers: modsArr,
-  };
+  if (mandatory) {
+    keyObj.modifiers.mandatory = mandatory;
+  }
+  if (optional) {
+    keyObj.modifiers.optional = mandatory;
+  }
+  return keyObj;
 };
 
-export const withMandatoryModifiers = (keyObj, modsArr) => {
-  return {
-    ...keyObj,
-    ...mods(modsArr, 'mandatory'),
-  };
+/**
+ * @param {KeyObject} keyObj
+ * @param {string[]} modifiers
+ */
+export const toWithModifiers = (keyObj, modifiers) => {
+  keyObj.modifiers = modifiers;
+  return keyObj;
 };
 
 /**
@@ -45,10 +55,13 @@ export const withMandatoryModifiers = (keyObj, modsArr) => {
 export const shiftKeys = (arr) => {
   return arr.map((key) => {
     const keyObj = keyCode(key);
-    return fromTo(keyObj, { ...keyObj, ...mods(['left_shift']) });
+    return fromTo(keyObj, toWithModifiers(keyObj, ['left_shift']));
   });
 };
 
+/**
+ * @param {any[]} keyMap - Array<KeyObject | ConsumerKeyObject>
+ */
 export const transformFunctionKeys = (keyMap) => {
   return keyMap.map((keyObj, idx) => {
     const keyCode = `f${idx + 1}`;
