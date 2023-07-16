@@ -1,5 +1,5 @@
 import { printJSON } from '../utils/io.js';
-import { fromTo, keyCode } from '../utils/to-k.js';
+import { fromTo, keyCode } from '../utils/mods-shared.js';
 
 // "simple_modifications": [
 //   {

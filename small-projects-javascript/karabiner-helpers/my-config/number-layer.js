@@ -1,6 +1,6 @@
 // import { shiftKeys } from "./shift-layer";
 import { printJSON } from '../utils/io.js';
-import { fromTo, keyCode } from '../utils/to-k.js';
+import { fromTo, keyCode } from '../utils/mods-shared.js';
 
 const keysToNums = [
   // array index = number

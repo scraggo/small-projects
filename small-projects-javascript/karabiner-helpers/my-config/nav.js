@@ -1,5 +1,5 @@
 import { printJSON } from '../utils/io.js';
-import { fromTo, keyCode, fromWithModifiers } from '../utils/to-k.js';
+import { fromTo, keyCode, fromWithModifiers } from '../utils/mods-shared.js';
 
 const res = [
   fromTo(keyCode('j'), keyCode('left_arrow')),

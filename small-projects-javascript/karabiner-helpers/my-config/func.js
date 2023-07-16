@@ -1,4 +1,5 @@
 import { printJSON } from '../utils/io.js';
+import { transformFunctionKeys } from '../utils/mods-function-keys.js';
 
 /**
  *
@@ -48,5 +49,5 @@ const funcKeyMap = [
   },
 ];
 
-const res = transform(funcKeyMap);
+const res = transformFunctionKeys(funcKeyMap);
 printJSON(res);

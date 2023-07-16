@@ -1,5 +1,5 @@
 import { printJSON } from '../utils/io.js';
-import { shiftKeys } from '../utils/to-k.js';
+import { shiftKeys } from '../utils/mods-shared.js';
 
 const keysToShift = [
   // row 1
