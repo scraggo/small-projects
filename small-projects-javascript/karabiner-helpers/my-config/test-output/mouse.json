@@ -123,5 +123,25 @@
         "speed_multiplier": 0.5
       }
     }
+  },
+  {
+    "from": {
+      "key_code": "h"
+    },
+    "to": {
+      "mouse_key": {
+        "horizontal_wheel": 32
+      }
+    }
+  },
+  {
+    "from": {
+      "key_code": "semicolon"
+    },
+    "to": {
+      "mouse_key": {
+        "horizontal_wheel": -32
+      }
+    }
   }
 ]
