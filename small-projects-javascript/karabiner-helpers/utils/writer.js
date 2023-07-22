@@ -7,6 +7,7 @@ import path from 'path';
  * @typedef { import("./types").KarabinerModsBase } KarabinerModsBase
  * @typedef { import("./types").KarabinerProfileDevice } KarabinerProfileDevice
  * @typedef { import("./types").KarabinerProfile } KarabinerProfile
+ * @typedef { import("./types").KarabinerComplexRule } KarabinerComplexRule
  */
 
 const ROOT_PATH = path.join(
@@ -14,6 +15,13 @@ const ROOT_PATH = path.join(
   '.config',
   'karabiner',
   'karabiner.json'
+);
+
+const BACKUP_PATH = path.join(
+  homedir(),
+  '.config',
+  'karabiner',
+  'automatic_backups'
 );
 
 const KEY_MOD_FN = 'fn_function_keys';
@@ -39,39 +47,27 @@ const selectorsProfile = {
   /**
    * @param {KarabinerProfile} profile
    */
-  modComplex: (profile) => profile[KEY_MOD_COMPLEX],
-  /**
-   * @param {KarabinerProfile|KarabinerProfileDevice} profile
-   */
-  modFunctionKeys: (profile) => profile[KEY_MOD_FN],
-  /**
-   * @param {KarabinerProfile|KarabinerProfileDevice} profile
-   */
-  modSimple: (profile) => profile[KEY_MOD_SIMPLE],
-  /**
-   * @param {KarabinerProfile} profile
-   */
   devices: (profile) => profile.devices,
 };
 
-/**
- * Within each profile is the ability to customize per device
- *
- * "identifiers": {
- *   "product_id": 541,
- *   "vendor_id": 1452
- * }
- */
-const selectorsProfileDevice = {
+const modifyAt = {
   /**
-   * @param {KarabinerProfileDevice} profileDevice
+   * @param {KarabinerProfile|KarabinerProfileDevice} profile
+   * @param {*} keysToWrite
    */
-  modFunctionKeys: (profileDevice) =>
-    selectorsProfile.modFunctionKeys(profileDevice),
+  [KEY_MOD_SIMPLE]: (profile, keysToWrite) =>
+    (profile[KEY_MOD_SIMPLE] = keysToWrite),
   /**
-   * @param {KarabinerProfileDevice} profileDevice
+   * @param {KarabinerProfile|KarabinerProfileDevice} profile
+   * @param {*} keysToWrite
    */
-  modSimple: (profileDevice) => selectorsProfile.modSimple(profileDevice),
+  [KEY_MOD_FN]: (profile, keysToWrite) => (profile[KEY_MOD_FN] = keysToWrite),
+  /**
+   * @param {KarabinerProfile|KarabinerProfileDevice} profile
+   * @param {*} keysToWrite
+   */
+  [KEY_MOD_COMPLEX]: (profile, keysToWrite) =>
+    (profile[KEY_MOD_COMPLEX].rules = keysToWrite),
 };
 
 export class Writer {
@@ -106,16 +102,34 @@ export class Writer {
     });
   }
 
+  /**
+   * @param {Object} profileProps
+   * @param {string} profileProps.profileName
+   * @param {KarabinerProfileDevice['identifiers']} [profileProps.deviceProps]
+   * @param {keyof typeof modifyAt} keyType
+   * @param {*} keysToWrite
+   */
   modifyProfile({ profileName, deviceProps = null }, keyType, keysToWrite) {
     const profile = deviceProps
       ? this.findDeviceProfileByNameAndDeviceInfo(profileName, deviceProps)
       : this.findProfileByName(profileName);
 
-    profile[keyType] = keysToWrite;
+    modifyAt[keyType](profile, keysToWrite);
+    // selectorsProfile[keyType](keysToWrite)
+    // if (keyType === KEY_MOD_COMPLEX) {
+    // }
+
+    // profile[keyType] = keysToWrite;
 
     return true;
   }
 
+  /**
+   * @param {Object} profileProps
+   * @param {string} profileProps.profileName
+   * @param {KarabinerProfileDevice['identifiers']} [profileProps.deviceProps]
+   * @param {KarabinerModsBase['fn_function_keys']} funcKeys
+   */
   makeFunctionMods({ profileName, deviceProps }, funcKeys) {
     return this.modifyProfile(
       { profileName, deviceProps },
@@ -124,10 +138,21 @@ export class Writer {
     );
   }
 
+  /**
+   * @param {Object} profileProps
+   * @param {string} profileProps.profileName
+   * @param {KarabinerComplexRule[]} complexKeys
+   */
   makeComplexMods({ profileName }, complexKeys) {
     return this.modifyProfile({ profileName }, KEY_MOD_COMPLEX, complexKeys);
   }
 
+  /**
+   * @param {Object} profileProps
+   * @param {string} profileProps.profileName
+   * @param {KarabinerProfileDevice['identifiers']} [profileProps.deviceProps]
+   * @param {KarabinerModsBase['simple_modifications']} simpleKeys
+   */
   makeSimpleMods({ profileName, deviceProps }, simpleKeys) {
     return this.modifyProfile(
       { profileName, deviceProps },
@@ -136,15 +161,25 @@ export class Writer {
     );
   }
 
+  /**
+   * @param {string} fullFilepath
+   */
   writeToFile(fullFilepath) {
-    console.log('writing config to', fullFilepath);
-    writeFileSync(fullFilepath, JSON.stringify(this.config), {
+    console.log('✏️  Writing config to', fullFilepath);
+    writeFileSync(fullFilepath, JSON.stringify(this.config, null, 4), {
       encoding: 'utf-8',
     });
-    console.log('success');
+    console.log('🎉 Success!');
   }
 
-  overwriteRootConfig() {
+  /**
+   * @param {string|null} [backupPath=BACKUP_PATH] null if you don't want to backup
+   */
+  overwriteRootConfig(backupPath = BACKUP_PATH) {
+    if (typeof backupPath === 'string') {
+      // this format is different from karabiner's YYYYMMDD format
+      this.writeToFile(path.join(backupPath, `karabiner_${Date.now()}.json`));
+    }
     this.writeToFile(ROOT_PATH);
   }
 }

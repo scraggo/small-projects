@@ -1,7 +1,7 @@
 import { writeFileSync } from 'fs';
 import path from 'path';
 
-import selectProfile from '../select-profile.js';
+import { selectLayerProfile, layerProfile } from '../select-profile.js';
 
 import func from '../func.js';
 
@@ -13,7 +13,8 @@ import windowsModifiers from '../windows-modifiers.js';
 
 // run from repo root
 [
-  { name: 'selectProfile', data: selectProfile },
+  { name: 'layerProfile', data: layerProfile },
+  { name: 'selectLayerProfile', data: selectLayerProfile },
   { name: 'func', data: func },
   { name: 'mouse', data: mouse },
   { name: 'nav', data: nav },

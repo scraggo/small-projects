@@ -1,4 +1,8 @@
-import { fromTo, keyNameToKeyObject } from '../utils/mods-shared.js';
+import {
+  fromTo,
+  fromWithModifiers,
+  charToKeyObject,
+} from '../utils/mods-shared.js';
 
 // "simple_modifications": [
 //   {
@@ -82,7 +86,7 @@ const createMouseMovement = (fromKey, x, y) => {
     to.mouse_key.y = y;
   }
 
-  return fromTo(keyNameToKeyObject(fromKey), to);
+  return fromTo(charToKeyObject(fromKey), to);
 };
 
 // {
@@ -95,7 +99,12 @@ const createMouseMovement = (fromKey, x, y) => {
 //       }
 //   }
 // },
-const createScroll = (fromKey, x, y) => {
+/**
+ * @param {*} fromKeyObject
+ * @param {number} [x]
+ * @param {number} [y]
+ */
+const createScroll = (fromKeyObject, x, y) => {
   const to = {
     mouse_key: {},
   };
@@ -113,7 +122,7 @@ const createScroll = (fromKey, x, y) => {
     to.mouse_key.vertical_wheel = y;
   }
 
-  return fromTo(keyNameToKeyObject(fromKey), to);
+  return fromTo(fromKeyObject, to);
 };
 
 const DISTANCES = {
@@ -172,33 +181,27 @@ export default [
   DOWN_RIGHT.slow,
   LEFT.slow,
   RIGHT.slow,
-  fromTo(keyNameToKeyObject('k'), {
+  fromTo(charToKeyObject('k'), {
     // this is the main button, it's switched in my mac settings
     pointing_button: 'button2',
   }),
-  fromTo(
-    {
-      key_code: 'k',
-      modifiers: {
-        mandatory: ['left_control'],
-      },
-    },
-    {
-      pointing_button: 'button1',
-    }
-  ),
-  fromTo(keyNameToKeyObject('left_shift'), {
+  fromTo(fromWithModifiers(charToKeyObject('k'), ['left_control']), {
+    pointing_button: 'button1',
+  }),
+  fromTo(charToKeyObject('left_shift'), {
     mouse_key: {
       speed_multiplier: 3.5,
     },
   }),
-  fromTo(keyNameToKeyObject('left_option'), {
+  fromTo(charToKeyObject('left_option'), {
     mouse_key: {
       speed_multiplier: 0.5,
     },
   }),
-  createScroll('h', 32), // left
-  createScroll('semicolon', -32), // right
+  createScroll(charToKeyObject('y'), 32), // left
+  createScroll(charToKeyObject('h'), -32), // right
+  createScroll(charToKeyObject('p'), null, -32), // up
+  createScroll(charToKeyObject('semicolon'), null, 32), // down
 ].flat();
 
 // printJSON(res);

@@ -1,0 +1,50 @@
+[
+  {
+    "description": "f1 -> select profile: Main",
+    "manipulators": [
+      {
+        "from": {
+          "key_code": "f1"
+        },
+        "to": [
+          {
+            "shell_command": "'/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli' --select-profile 'Main'"
+          }
+        ],
+        "type": "basic"
+      }
+    ]
+  },
+  {
+    "description": "f2 -> select profile: Mouse",
+    "manipulators": [
+      {
+        "from": {
+          "key_code": "f2"
+        },
+        "to": [
+          {
+            "shell_command": "'/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli' --select-profile 'Mouse'"
+          }
+        ],
+        "type": "basic"
+      }
+    ]
+  },
+  {
+    "description": "f3 -> select profile: Number",
+    "manipulators": [
+      {
+        "from": {
+          "key_code": "f3"
+        },
+        "to": [
+          {
+            "shell_command": "'/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli' --select-profile 'Number'"
+          }
+        ],
+        "type": "basic"
+      }
+    ]
+  }
+]

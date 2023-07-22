@@ -1,6 +1,13 @@
-import { printJSON } from '../utils/io.js';
+// import { printJSON } from '../utils/io.js';
 import { createComplexRule } from '../utils/mods-complex.js';
-import { keyNameToKeyObject } from '../utils/mods-shared.js';
+import { charToKeyObject } from '../utils/mods-shared.js';
+
+export const PROFILES = {
+  Main: 'Main',
+  Mouse: 'Mouse',
+  Nav: 'Nav',
+  Number: 'Number',
+};
 
 const createDescription = (from, name) => `${from} -> select profile: ${name}`;
 
@@ -35,7 +42,7 @@ const createProfileSelector = ({
   profileName,
 }) => {
   const manipulator = {
-    from: keyNameToKeyObject(fromKey),
+    from: charToKeyObject(fromKey),
     to: [
       {
         shell_command: `'${karabiner_cli}' --select-profile '${profileName}'`,
@@ -49,31 +56,28 @@ const createProfileSelector = ({
   ]);
 };
 
-const mapped = [
-  // This profile goes into all the layers
+// This profile goes into all the layers
+export const selectLayerProfile = [
   {
     fromKey: 'f1',
-    profileName: 'Layer',
+    profileName: PROFILES.Nav,
   },
+].map(createProfileSelector);
 
+export const layerProfile = [
   // The rest go into the layer selection profile
   {
     fromKey: 'f1',
-    profileName: 'DEC1',
+    profileName: PROFILES.Main,
   },
   {
     fromKey: 'f2',
-    profileName: 'Shift',
+    profileName: PROFILES.Mouse,
   },
   {
     fromKey: 'f3',
-    profileName: 'Mouse',
-  },
-  {
-    fromKey: 'f4',
-    profileName: 'Number',
+    profileName: PROFILES.Number,
   },
 ].map(createProfileSelector);
 
 // printJSON(mapped);
-export default mapped;

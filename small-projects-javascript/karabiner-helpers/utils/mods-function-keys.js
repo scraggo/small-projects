@@ -1,4 +1,4 @@
-import { fromToSameCode, keyNameToKeyObject } from './mods-shared.js';
+import { fromToSameCode, charToKeyObject } from './mods-shared.js';
 
 /**
  * @typedef { import("./types").KeyObject } KeyObject
@@ -12,7 +12,7 @@ import { fromToSameCode, keyNameToKeyObject } from './mods-shared.js';
 export const transformFunctionKeys = (keyMap) => {
   return keyMap.map((keyObj, idx) => {
     const funcKeyCode = `f${idx + 1}`;
-    const mapped = fromToSameCode(keyNameToKeyObject(funcKeyCode));
+    const mapped = fromToSameCode(charToKeyObject(funcKeyCode));
 
     if ('key_code' in keyObj || 'consumer_key_code' in keyObj) {
       mapped.to = keyObj;

@@ -4,10 +4,10 @@
  */
 
 /**
- * @param {string} key
+ * @param {string} char ex. "semicolon"
  * @returns {KeyObject}
  */
-export const keyNameToKeyObject = (key) => ({ key_code: key });
+export const charToKeyObject = (char) => ({ key_code: char });
 
 /**
  * @param {*} fromObj
@@ -15,6 +15,21 @@ export const keyNameToKeyObject = (key) => ({ key_code: key });
  */
 export const fromTo = (fromObj, toObj) => ({ from: fromObj, to: toObj });
 export const fromToSameCode = (keyObj) => fromTo(keyObj, keyObj);
+
+/**
+ * returns object in this shape:
+{
+  "from": {
+      "key_code": keyFrom
+  },
+  "to": {
+      "key_code": keyTo
+  }
+}
+ * @param {[string, string]} charPair
+ */
+export const simpleKeyAssignment = ([keyFrom, keyTo]) =>
+  fromTo(charToKeyObject(keyFrom), charToKeyObject(keyTo));
 
 /**
  * @param {KeyObject} keyObj
@@ -64,8 +79,8 @@ export const toWithModifiers = (keyObj, modifiers) => {
  */
 export const shiftKeys = (arr) => {
   return arr.map((key) => {
-    const keyObj = keyNameToKeyObject(key);
-    const keyObjClone = keyNameToKeyObject(key);
+    const keyObj = charToKeyObject(key);
+    const keyObjClone = charToKeyObject(key);
     return fromTo(keyObj, toWithModifiers(keyObjClone, ['left_shift']));
   });
 };

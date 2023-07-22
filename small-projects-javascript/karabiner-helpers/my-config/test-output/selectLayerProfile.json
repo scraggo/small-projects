@@ -1,0 +1,18 @@
+[
+  {
+    "description": "f1 -> select profile: Nav",
+    "manipulators": [
+      {
+        "from": {
+          "key_code": "f1"
+        },
+        "to": [
+          {
+            "shell_command": "'/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli' --select-profile 'Nav'"
+          }
+        ],
+        "type": "basic"
+      }
+    ]
+  }
+]

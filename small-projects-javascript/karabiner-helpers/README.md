@@ -1,4 +1,4 @@
-# karabiner-source
+# karabiner-helpers
 
 ## Why?
 

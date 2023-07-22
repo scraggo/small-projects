@@ -143,5 +143,25 @@
         "horizontal_wheel": -32
       }
     }
+  },
+  {
+    "from": {
+      "key_code": "y"
+    },
+    "to": {
+      "mouse_key": {
+        "vertical_wheel": 32
+      }
+    }
+  },
+  {
+    "from": {
+      "key_code": "p"
+    },
+    "to": {
+      "mouse_key": {
+        "vertical_wheel": -32
+      }
+    }
   }
 ]
