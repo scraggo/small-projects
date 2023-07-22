@@ -4,7 +4,7 @@ import { Writer } from '../utils/writer.js';
 import func from './func.js';
 import mouse from './mouse.js';
 import nav from './nav.js';
-import number from './number-layer.js';
+import number from './number.js';
 import {
   layerProfile,
   selectLayerProfile,
@@ -114,5 +114,6 @@ writeProfile(
   layerProfile
 );
 
+// writer.backupRootConfig();
 writer.writeToFile(path.resolve('.', 'my-config', 'test-output', '_root.json'));
 // writer.overwriteRootConfig();

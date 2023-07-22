@@ -10,14 +10,14 @@ import path from 'path';
  * @typedef { import("./types").KarabinerComplexRule } KarabinerComplexRule
  */
 
-const ROOT_PATH = path.join(
+export const ROOT_PATH = path.join(
   homedir(),
   '.config',
   'karabiner',
   'karabiner.json'
 );
 
-const BACKUP_PATH = path.join(
+export const BACKUP_PATH = path.join(
   homedir(),
   '.config',
   'karabiner',
@@ -72,9 +72,13 @@ const modifyAt = {
 
 export class Writer {
   constructor(karabinerPath = ROOT_PATH) {
-    const file = readFileSync(karabinerPath, { encoding: 'utf-8' });
+    this.karabinerPath = karabinerPath;
+
+    /** @type {string} Unmodified root config */
+    this.configJSON = readFileSync(this.karabinerPath, { encoding: 'utf-8' });
+
     /** @type {KarabinerConfig} */
-    this.config = JSON.parse(file);
+    this.config = JSON.parse(this.configJSON);
   }
 
   /**
@@ -162,6 +166,21 @@ export class Writer {
   }
 
   /**
+   * @param {string} [backupPath=BACKUP_PATH]
+   */
+  backupRootConfig(backupPath = BACKUP_PATH) {
+    // this format is different from karabiner's YYYYMMDD format
+    const dest = path.join(backupPath, `karabiner_${Date.now()}.json`);
+
+    // fs.copyFile is broke
+    writeFileSync(dest, this.configJSON, {
+      encoding: 'utf-8',
+    });
+
+    console.log(`📃 Successful backup to ${dest}`);
+  }
+
+  /**
    * @param {string} fullFilepath
    */
   writeToFile(fullFilepath) {
@@ -173,13 +192,13 @@ export class Writer {
   }
 
   /**
-   * @param {string|null} [backupPath=BACKUP_PATH] null if you don't want to backup
+   * Overwrites Karabiner config with your modifications.
+   * @param {Object} [options={backupPath: BACKUP_PATH}] Provide { backupPath: 'my-path' } for an alternate backup path or { backupPath: null } if you'd rather not back up the file.
    */
-  overwriteRootConfig(backupPath = BACKUP_PATH) {
+  overwriteRootConfig({ backupPath } = { backupPath: BACKUP_PATH }) {
     if (typeof backupPath === 'string') {
-      // this format is different from karabiner's YYYYMMDD format
-      this.writeToFile(path.join(backupPath, `karabiner_${Date.now()}.json`));
+      this.backupRootConfig(backupPath);
     }
-    this.writeToFile(ROOT_PATH);
+    this.writeToFile(this.karabinerPath);
   }
 }

@@ -1,15 +1,15 @@
 import { writeFileSync } from 'fs';
 import path from 'path';
 
-import { selectLayerProfile, layerProfile } from '../select-profile.js';
+import { selectLayerProfile, layerProfile } from './select-profile.js';
 
-import func from '../func.js';
+import func from './func.js';
 
-import mouse from '../mouse.js';
-import nav from '../nav.js';
-import numberLayer from '../number-layer.js';
-import shiftLayer from '../shift-layer.js';
-import windowsModifiers from '../windows-modifiers.js';
+import mouse from './mouse.js';
+import nav from './nav.js';
+import number from './number.js';
+// import shiftLayer from './shift.js';
+import { windowsToMacKeys } from './simple.js';
 
 // run from repo root
 [
@@ -18,9 +18,9 @@ import windowsModifiers from '../windows-modifiers.js';
   { name: 'func', data: func },
   { name: 'mouse', data: mouse },
   { name: 'nav', data: nav },
-  { name: 'numberLayer', data: numberLayer },
-  { name: 'shiftLayer', data: shiftLayer },
-  { name: 'windowsModifiers', data: windowsModifiers },
+  { name: 'number', data: number },
+  // { name: 'shiftLayer', data: shiftLayer },
+  { name: 'windowsToMacKeys', data: windowsToMacKeys },
 ].forEach(({ name, data }) => {
   writeFileSync(
     path.resolve('my-config', 'test-output', `${name}.json`),

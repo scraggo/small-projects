@@ -126,7 +126,7 @@
   },
   {
     "from": {
-      "key_code": "h"
+      "key_code": "y"
     },
     "to": {
       "mouse_key": {
@@ -136,21 +136,11 @@
   },
   {
     "from": {
-      "key_code": "semicolon"
+      "key_code": "h"
     },
     "to": {
       "mouse_key": {
         "horizontal_wheel": -32
-      }
-    }
-  },
-  {
-    "from": {
-      "key_code": "y"
-    },
-    "to": {
-      "mouse_key": {
-        "vertical_wheel": 32
       }
     }
   },
@@ -161,6 +151,16 @@
     "to": {
       "mouse_key": {
         "vertical_wheel": -32
+      }
+    }
+  },
+  {
+    "from": {
+      "key_code": "semicolon"
+    },
+    "to": {
+      "mouse_key": {
+        "vertical_wheel": 32
       }
     }
   }

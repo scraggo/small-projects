@@ -3,6 +3,7 @@ import {
   fromTo,
   charToKeyObject,
   // fromWithModifiers,
+  toWithModifiers,
 } from '../utils/mods-shared.js';
 
 const res = [
@@ -12,19 +13,24 @@ const res = [
   fromTo(charToKeyObject('i'), charToKeyObject('up_arrow')),
   fromTo(charToKeyObject('p'), charToKeyObject('page_up')),
   fromTo(charToKeyObject('semicolon'), charToKeyObject('page_down')),
-  fromTo(charToKeyObject('u'), charToKeyObject('home')),
-  fromTo(charToKeyObject('o'), charToKeyObject('end')),
+  fromTo(charToKeyObject('y'), charToKeyObject('home')),
+  fromTo(charToKeyObject('h'), charToKeyObject('end')),
 
-  // // pageUp
-  // fromTo(
-  //   fromWithModifiers(charToKeyObject('i'), ['left_control']),
-  //   charToKeyObject('page_up')
-  // ),
-  // // pageDown
-  // fromTo(
-  //   fromWithModifiers(charToKeyObject('k'), ['left_control']),
-  //   charToKeyObject('page_down')
-  // ),
+  // switch tabs
+  fromTo(
+    charToKeyObject('u'),
+    toWithModifiers(charToKeyObject('left_arrow'), [
+      'left_command',
+      'left_option',
+    ])
+  ),
+  fromTo(
+    charToKeyObject('o'),
+    toWithModifiers(charToKeyObject('right_arrow'), [
+      'left_command',
+      'left_option',
+    ])
+  ),
 ];
 
 export default res;

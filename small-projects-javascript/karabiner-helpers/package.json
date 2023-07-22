@@ -7,7 +7,7 @@
     "node": ">=16"
   },
   "scripts": {
-    "test": "node ./my-config/test-output/generate-test-output.js",
+    "test": "node ./my-config/generate-test-output.js",
     "write": "node ./my-config/myconfig.js"
   },
   "keywords": [],
