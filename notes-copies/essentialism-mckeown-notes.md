@@ -1,4 +1,6 @@
-Book Essentialism
+Essentialism
+
+Greg McKeown
 
 - [[essentialism-mckeown-summary]]
 - [[essentialism-mckeown-interview-tps102]]
