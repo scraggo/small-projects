@@ -3,7 +3,48 @@ Essentialism
 Greg McKeown
 
 - [[essentialism-mckeown-summary]]
-- [[essentialism-mckeown-interview-tps102]]
+- [[essentialism-mckeown-talks]]
+
+## Overview
+
+The book is divided into 2 sections, "Essence" and "3 Steps of the Essentialist method"
+
+Part 1: Essence - Chapters 1-4.
+- > What is the core mindset of an Essentialist?
+- 1 - Less, but better
+- 2 - Choose: realize you always have choices
+- 3 - Discern: 80/20
+- 4 - Trade-offs: embrace the consequences of less, go big on what matters
+
+Parts 2-4: 3 Steps of the Essentialist method
+
+Part 2: Explore - Chapters 5-9
+- > How can we discern the trivial many from the vital few?
+- Thoughtfully evaluate choices
+- 5 - Escape: disconnect to make room to find what's essential
+- 6 - Look: keep a regular journal
+- 7 - Play: explore what lights you up, acknowledge that's essential
+- 8 - Sleep: "protecting the asset" is more difficult than running yourself ragged
+- 9 - Select: use minimum and _extreme_ criteria
+
+Part 3: Eliminate - Chapters 10-14
+- > How can we cut out the trivial many?
+- Eliminate what you don't love, isn't important, etc. What would you pay _now_ for the old shirt in your closet?
+- 10 - Clarify: define an _Essential Intent_ with concrete action built into it
+- 11 - Dare: Say "No" firmly, resolutely, gracefully. Fosters respect
+- 12 - Uncommit: acknowledge sunk cost fallacy, status quo bias, etc
+- 13 - Edit: cut, condense, correct, edit less / let things happen
+- 14 - Limit: freedom through setting boundaries and creating social contracts
+
+Part 4: Execute - Chapters 15-20
+- > How can we make doing the vital few things almost effortless?
+- Turn the mindset into a system and make every choice an essentialist choice.
+- 15 - Buffer: extreme preparation for when things go wrong
+- 16 - Subtract: Theory of constraints: improve the least efficient part of the system
+- 17 - Progress: celebrate small wins, make that an "atomic habit"
+- 18 - Flow: make your essential intents automatic through your routine
+- 19 - Focus: figure out what's important _now_, consider the big picture
+- 20 - Be: joy is a result of making essentialism core to your life
 
 ## 1: The Essentialist
 
@@ -19,10 +60,7 @@ We are sold a promise that we can have it all. But adding more never makes us ha
 
 Priority is singular. You can't have multiple priorities.
 
-3 steps:
-- Explore - Thoughtfully evaluate choices
-- Eliminate - Eliminate what you don't love, isn't important, etc. What would you pay _now_ for the old shirt in your closet?
-- Execute - turn the mindset into a system and make every choice an essentialist choice.
+See `## Overview` above.
 
 ## 2: Choose—The Invincible Power of Choice
 
@@ -70,7 +108,7 @@ Journalism: find the lead, don't regurgitate facts.
 
 Keep a journal. When you review it, look for patterns, find what matters to you.
 
-Essentialists don't get hung up on details - they look for the big picture, they listen for what's -not- being said, they filter for what's fascinating.
+Essentialists don't get hung up on details - they look for the big picture, they listen for what's _not_ being said, they filter for what's fascinating.
 
 Many times problems are presented one way (like, building a cheaper version of something) but actually need to be solved another way (like, actually building an incubator that doesn't use electricity.) A car isn't a faster horse.
 
@@ -117,6 +155,8 @@ Without this, people play politics, try to please the boss, follow their own opp
 An essential intent lets everyone know when the goal is achieved.
 
 ## 11: Dare—The Power of a Graceful “No”
+
+Say "No" firmly, resolutely, gracefully.
 
 We're afraid to say no for many reasons. We want to avoid social awkwardness. We think we'll damage the relationship.
 
@@ -274,3 +314,10 @@ FCS:
 - (Pronounce FCS as "Focus")
 
 Essentialist teams are aligned on their singular purpose. Each person knows what their singular priorities are and their role utilizes their strengths. It's clear what to work on, goals don't whimsically shift.
+
+## Resources
+
+- https://verbaltovisual.com/essentialism/
+  - https://i.pinimg.com/736x/96/c4/b6/96c4b69434548e24d2a1a2fcd6d21f6b.jpg saved to `~/Desktop/essentialism-talk/`
+- https://readingraphics.com/book-summary-essentialism-the-disciplined-pursuit-of-less/
+  - https://readingraphics.com/uploads/2019/01/Essentialism_defining-essentialism.png saved to `~/Desktop/essentialism-talk/`
