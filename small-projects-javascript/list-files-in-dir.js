@@ -16,7 +16,7 @@ function getRandomInts(min, max, numberOfInts) {
   return ints;
 }
 
-// Function to list all files in a directory recursively
+// Function to get a list of all files in a directory recursively
 function listFiles(dir, opts) {
   const files = fs.readdirSync(dir);
   const { root: rootDir } = opts;
@@ -25,7 +25,7 @@ function listFiles(dir, opts) {
   files.forEach((file) => {
     const fullPath = path.join(dir, file);
     if (fs.statSync(fullPath).isDirectory()) {
-      return listFiles(fullPath, opts);
+      return lines.push(...listFiles(fullPath, opts))
     }
 
     const fileName = path.basename(fullPath);
@@ -39,8 +39,14 @@ function listFiles(dir, opts) {
   return lines;
 }
 
+/**
+ * Usage with random:
+ * node list-files-in-dir.js path/to/Notes/ random=20 > notes-list-random.txt
+ *
+ * Usage non-random:
+ * node list-files-in-dir.js path/to/Notes/ > notes-list-full.txt
+ */
 function main() {
-  // Check if the directory path is provided as a command-line argument
   if (process.argv.length > 2) {
     // command-line argument 1 (required): directory path
     // command-line argument 2 (optional): random=N
