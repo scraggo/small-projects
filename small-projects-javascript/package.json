@@ -1,0 +1,14 @@
+{
+  "name": "misc",
+  "version": "1.0.0",
+  "description": "",
+  "engines": {
+    "node": ">=16"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.57.0"
+  }
+}
