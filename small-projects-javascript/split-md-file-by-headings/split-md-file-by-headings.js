@@ -9,7 +9,25 @@ function getFilename(inputString) {
   return sanitized + '.md';
 }
 
-function splitMarkdown(inputFilepath, outputDir) {
+function writeContent({
+  heading,
+  section,
+  prependContent, // optional, hook to add metadata
+  outputDir,
+}) {
+  const fileName = getFilename(heading);
+  const contentToPrepend = prependContent ? prependContent(heading) : '';
+  const content = contentToPrepend + section;
+  fs.writeFileSync(path.join(outputDir, fileName), content);
+}
+
+function splitMarkdown(
+  inputFilepath,
+  { outputDir, prependContent } = {
+    outputDir: undefined, // optional, hook to add metadata
+    prependContent: undefined,
+  }
+) {
   outputDir = outputDir || path.dirname(inputFilepath);
   const lines = fs.readFileSync(inputFilepath, 'utf8').split('\n');
   // let fileIndex = 1;
@@ -21,8 +39,12 @@ function splitMarkdown(inputFilepath, outputDir) {
       // If there's a previous section, write it to a file
       if (currentSection) {
         // const fileName = currentHeading.replace(/[^a-zA-Z0-9_]/g, '_') + '.md';
-        const fileName = getFilename(currentHeading);
-        fs.writeFileSync(path.join(outputDir, fileName), currentSection);
+        writeContent({
+          heading: currentHeading,
+          section: currentSection,
+          prependContent,
+          outputDir,
+        });
         currentSection = '';
       }
       // Update the current heading
@@ -38,11 +60,23 @@ function splitMarkdown(inputFilepath, outputDir) {
 
     // Handle the last section if it's the last line
     if (index === lines.length - 1 && currentSection) {
-      const fileName = getFilename(currentHeading);
-      fs.writeFileSync(path.join(outputDir, fileName), currentSection);
+      writeContent({
+        heading: currentHeading,
+        section: currentSection,
+        prependContent,
+        outputDir,
+      });
     }
   });
 }
 
 // Example usage
-splitMarkdown('input/path', 'input/path/output');
+splitMarkdown(
+  './markdown-file-ex.md', // input path
+  {
+    outputDir: '../.idea/split-md-output',
+    prependContent: (heading) => `---
+title: "${heading.replace(/"/g, '_')}"
+---\n\n`,
+  }
+);
