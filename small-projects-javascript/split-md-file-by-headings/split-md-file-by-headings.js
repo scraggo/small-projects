@@ -16,6 +16,7 @@ function writeContent({
   prependContent, // optional, hook to add metadata
   outputDir,
 }) {
+  // todo: make optional prepending fileIndex optional
   // const fileName = getFilename(heading);
   const fileName = String(fileIndex).padStart(2, '0') + getFilename(heading);
   const contentToPrepend = prependContent ? prependContent(heading) : '';
