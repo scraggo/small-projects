@@ -10,12 +10,14 @@ function getFilename(inputString) {
 }
 
 function writeContent({
+  fileIndex,
   heading,
   section,
   prependContent, // optional, hook to add metadata
   outputDir,
 }) {
-  const fileName = getFilename(heading);
+  // const fileName = getFilename(heading);
+  const fileName = String(fileIndex).padStart(2, '0') + getFilename(heading);
   const contentToPrepend = prependContent ? prependContent(heading) : '';
   const content = contentToPrepend + section;
   fs.writeFileSync(path.join(outputDir, fileName), content);
@@ -30,7 +32,7 @@ function splitMarkdown(
 ) {
   outputDir = outputDir || path.dirname(inputFilepath);
   const lines = fs.readFileSync(inputFilepath, 'utf8').split('\n');
-  // let fileIndex = 1;
+  let fileIndex = 1;
   let currentSection = '';
   let currentHeading = '';
 
@@ -40,12 +42,14 @@ function splitMarkdown(
       if (currentSection) {
         // const fileName = currentHeading.replace(/[^a-zA-Z0-9_]/g, '_') + '.md';
         writeContent({
+          fileIndex,
           heading: currentHeading,
           section: currentSection,
           prependContent,
           outputDir,
         });
         currentSection = '';
+        fileIndex += 1;
       }
       // Update the current heading
       currentHeading = line.substring(3).trim();
@@ -61,6 +65,7 @@ function splitMarkdown(
     // Handle the last section if it's the last line
     if (index === lines.length - 1 && currentSection) {
       writeContent({
+        fileIndex,
         heading: currentHeading,
         section: currentSection,
         prependContent,
