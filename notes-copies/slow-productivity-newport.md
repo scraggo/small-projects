@@ -35,6 +35,8 @@ summaries:
 
 ## Chapter 2: A Slower Activity
 
+"Slow Food" movement in Italy - inspired lots of other "slow" movements
+
 - True productivity occurs at a slow pace and is invisible.
 - Reduced workweeks and being able to work slowly helps mitigate the worst aspects of pseudo-productivity.
 
@@ -45,9 +47,9 @@ summaries:
 - Overhead tax, a back-and-forth messaging process, can lead to increased costs due to the frictionless nature of technology.
 
 - Doing fewer things can yield better results, requiring self-regulation and limiting incoming requests.
-- From largest to smallest: limit missions, projects, and daily goals to focus on a singular project.
+- Limit the big (mission / projects). Limit the small: Limit daily goals to 1 project / mission
 
-strategies:
+"Contain the small" strategies:
 
 - Put tasks on autopilot: assign recurring work to specific times, days, and locations weekly. The idea is to contain tasks to complete them.
 - Synchronize: replace asynchronous communication with real-time conversations. Not every task is worth a meeting, so don’t overschedule work sessions. Also, try to dedicate a specific timeframe for this purpose.
@@ -55,7 +57,9 @@ strategies:
 - Avoid task engines: choose the type of work that will generate fewer tasks and unnecessary back-and-forth exchanges. Task engines generate several urgent things to do, so simply avoid them.
 - Spend money: this involves spending money on useful apps and services rather than getting the most out of free versions. As expensive as these tools can be, professional software services make a difference, especially in eliminating certain tasks.
 
-Go from Push to Pull:
+Go from Push to Pull
+
+A push-based process is where you push work, promising to commit to it as soon as you’re done with what you’re working on. Pull, on the other hand, involves committing to work only when you’re ready. Pulling in new work makes it almost impossible to overload and makes it easy to complete projects. The idea is to have lots of tasks to pull from, update them as necessary, and inform relevant people what you’re working on.
 
 - Track all projects on a list divided into "holding tank" and "active" sections.
 - New projects are placed in the holding-pen section of the list, with no bounds on the list size.
@@ -81,8 +85,8 @@ List Cleaning
 
 Slowing Down Strategies:
 
-- Make a five-year plan - when the timeline is long, changes in momentum and breaks don't derail the project
-- Double project timelines - accept slower accumulation of smaller bits.
+- Make a 5-year plan - when the timeline is long, changes in momentum and breaks don't derail the project
+- Double project timelines - accept slower accumulation of smaller bits. Also, getting half the things done is like doubling time.
 - Simplify workdays by scheduling fewer tasks and reducing appointments.
 - Forgive self-procrastination, it will happen when timelines are longer.
 - Embrace seasonality, varying work intensity and focus throughout the year.
@@ -92,11 +96,14 @@ Quiet (not-quite) Quitting Strategies
 - Define a shorter work year: 10 instead of 12 months, for example.
 - Implement "small seasonality": Avoid working frantically without rest, not on an entire season.
 - Avoid meetings on Mondays: Suggest a different day for meetings when requested.
+- "One for you, one for me": when someone schedules a meeting, you protect / block off that same amount of time
 - See a matinee once a month: Reset your mind by going to a movie theater or going on hikes or visiting museums.
 - Schedule rest projects for each major project to balance stress. Examples include watching movies, learning a language, or playing a musical instrument.
-- Work in cycles: Work at higher intensity for 2-8 weeks. Then have a couple of weeks of "cool down" to work on small issues.
+- Work in cycles: Work at higher intensity for 2-8 weeks. Then have a couple of weeks of "cool down" to work on small issues. (Inspired by Basecamp's software lifecycle)
 
 Space, Tools, and Rituals
+
+Workspaces should be conducive to your work (lots of instruments) and outside of daily routine (no reminders of household chores). Strange can be good - a non rational ritual can be a creative jumpstart
 
 - Match your space to complement your work.
 - Work in "strange" places to reduce everyday distractions (like dishes and laundry)
