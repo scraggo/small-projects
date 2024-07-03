@@ -1,5 +1,3 @@
-// @ts-check
-
 /**
  * adds 'array', 'null', 'set' to typeof function
  * @param {unknown} item

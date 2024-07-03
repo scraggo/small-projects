@@ -48,7 +48,15 @@ function processFile(inPath, outPath) {
   }
 }
 
-const [, , inputPath, outputPath] = process.argv;
-console.log('inputPath:', inputPath);
-console.log('outputPath:', outputPath);
-processFile(inputPath, outputPath);
+function main() {
+  const [, , inputPath, outputPath] = process.argv;
+  console.log('inputPath:', inputPath);
+  console.log('outputPath:', outputPath);
+
+  if (!inputPath || !outputPath) {
+    throw new Error('argument(s) for input and output must be defined');
+  }
+  processFile(inputPath, outputPath);
+}
+
+main();
