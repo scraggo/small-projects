@@ -43,7 +43,7 @@ function listFiles(dir, opts) {
  * Usage with random:
  * node list-files-in-dir.js path/to/Notes/ random=20 > notes-list-random.txt
  *
- * Usage non-random:
+ * Usage non-random - lists all files:
  * node list-files-in-dir.js path/to/Notes/ > notes-list-full.txt
  */
 function main() {
@@ -55,9 +55,12 @@ function main() {
     return
   }
 
-  // command-line argument 1 (required): directory path
-  // command-line argument 2 (optional): random=N
-  const [, , dirPath, randomInts] = process.argv;
+  const [, ,
+    /** command-line argument 1 (required): directory path */
+    dirPath,
+    /** command-line argument 2 (optional): random=N */
+    randomInts
+  ] = process.argv;
 
   /** resolve to absolute path (fixes '.', './', etc shenanigans) */
   const lines = listFiles(dirPath, { root: path.resolve(dirPath) });
