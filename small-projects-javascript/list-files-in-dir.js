@@ -47,33 +47,37 @@ function listFiles(dir, opts) {
  * node list-files-in-dir.js path/to/Notes/ > notes-list-full.txt
  */
 function main() {
-  if (process.argv.length > 2) {
-    // command-line argument 1 (required): directory path
-    // command-line argument 2 (optional): random=N
-    const [, , dirPath, randomInts] = process.argv;
+  if (process.argv.length <= 2) {
+    console.error(
+      'Please provide a directory path as a command-line argument.'
+    );
+    process.exitCode = 1;
+    return
+  }
 
-    const lines = listFiles(dirPath, { root: dirPath });
+  // command-line argument 1 (required): directory path
+  // command-line argument 2 (optional): random=N
+  const [, , dirPath, randomInts] = process.argv;
 
-    if (randomInts) {
-      const [, num] = randomInts.split('=').map(Number);
-      console.log(`${num} random files in dir: ${dirPath}\n`);
-      const randomNumbers = getRandomInts(0, lines.length, num);
+  const lines = listFiles(dirPath, { root: dirPath });
 
-      randomNumbers.forEach((randomInt) => {
-        console.log(lines[randomInt]);
-      });
-      return;
-    }
+  if (randomInts) {
+    const [, num] = randomInts.split('=').map(Number);
+    console.log(`${num} random files in dir: ${dirPath}\n`);
+    const randomNumbers = getRandomInts(0, lines.length, num);
 
+    randomNumbers.forEach((randomInt) => {
+      console.log(lines[randomInt]);
+    });
+
+  } else {
     console.log(`All files in dir: ${dirPath}\n`);
     lines.forEach((line) => {
       console.log(line);
     });
-  } else {
-    console.error(
-      'Please provide a directory path as a command-line argument.'
-    );
   }
+
+  return;
 }
 
 main();
