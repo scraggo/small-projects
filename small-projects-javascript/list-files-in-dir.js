@@ -59,7 +59,8 @@ function main() {
   // command-line argument 2 (optional): random=N
   const [, , dirPath, randomInts] = process.argv;
 
-  const lines = listFiles(dirPath, { root: dirPath });
+  /** resolve to absolute path (fixes '.', './', etc shenanigans) */
+  const lines = listFiles(dirPath, { root: path.resolve(dirPath) });
 
   if (randomInts) {
     const [, num] = randomInts.split('=').map(Number);
